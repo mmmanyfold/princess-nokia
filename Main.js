@@ -28,7 +28,6 @@ function Main(props) {
 
       <div className="name"><img width="85%" src="img/princess-nokia.png"/></div>
       <div className="flag"><img src="img/flag.png"/></div>
-      <div className="abstract"><img src=""/></div>
     </div>)
 }
 
