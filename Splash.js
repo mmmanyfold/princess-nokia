@@ -3,8 +3,7 @@ import { Link } from 'react-router'
 
 function Splash(props) {
     return (<div className="splash">
-        <h1>Splash</h1>
-        <Link to="main">take me to the main screen!!</Link>
+      <Link to="main"><img height="100%" src="img/Nokia-1.jpg" alt="Princess Nokia"/></Link>
     </div>);
 }
 

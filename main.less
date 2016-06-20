@@ -1,9 +1,48 @@
 body {
+  margin: auto;
   color: red;
 }
 
-.splash {
-  h1 {
-    color: blue;
+.navbar .navbar-nav {
+  text-align: center;
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin: auto;
+  width: 100%;
+  li{
+    width: 25%;
   }
+  // img{
+  //   width: 65px;
+  // }
+}
+
+.navbar .navbar-collapse {
+  margin-top: 15px;
+}
+
+.name {
+  position: absolute;
+  left:30px;
+  bottom:25px;
+}
+
+.flag {
+  position: absolute;
+  right:35px;
+  bottom:20px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.abstract {
+  position: absolute;
+  right:0px;
+  bottom:0px;
+}
+
+.splash {
+  text-align: center;
 }
