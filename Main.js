@@ -1,4 +1,6 @@
 import React from 'react';
+import bootstrap from 'bootstrap'
+import $ from 'jquery'
 
 function Main(props) {
     return (<div>
