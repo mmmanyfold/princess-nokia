@@ -80,7 +80,7 @@ class AppContainer extends React.Component {
                     </div>
                 </div>
             </nav>
-            <div className="content">
+            <div className="container">
                 {this.props.children}
             </div>
             <div className="name"><img width="85%" src={princessNokia}/></div>

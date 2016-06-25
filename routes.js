@@ -12,6 +12,10 @@ const routes = (<Router history={browserHistory}>
         <IndexRoute component={Splash}/>
         <Route path="/main" component={Main}/>
     </Route>
+    <Route path='/princess-nokia' component={AppContainer}>
+        <IndexRoute component={Splash}/>
+        <Route path="/main" component={Main}/>
+    </Route>
 </Router>);
 
 
