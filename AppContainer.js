@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const menu_shop = require('./img/menu_shop.png');
 const menu_shop_ro = require('./img/menu_shop_ro.png');
@@ -65,10 +66,12 @@ class AppContainer extends React.Component {
                                      onMouseOut={this.rollover.bind(this, "Tour", 0)}/>
                             </li>
                             <li>
-                                <img className="nav_music"
-                                     src={this.state.Music}
-                                     onMouseOver={this.rollover.bind(this, "Music", 1)}
-                                     onMouseOut={this.rollover.bind(this, "Music", 0)}/>
+                                <Link to="music">
+                                    <img className="nav_music"
+                                         src={this.state.Music}
+                                         onMouseOver={this.rollover.bind(this, "Music", 1)}
+                                         onMouseOut={this.rollover.bind(this, "Music", 0)}/>
+                                </Link>
                             </li>
                             <li>
                                 <img className="nav_art"
@@ -83,7 +86,11 @@ class AppContainer extends React.Component {
             <div className="container">
                 {this.props.children}
             </div>
-            <div className="name"><img width="85%" src={princessNokia}/></div>
+            <div className="name">
+                <Link to="main">
+                    <img width="85%" src={princessNokia}/>
+                </Link>
+            </div>
             <div className="flag"><img src={flag}/></div>
         </div>);
     }
