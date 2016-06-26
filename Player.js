@@ -19,9 +19,10 @@ class Player extends Component {
         this.playNext = this.playNext.bind(this);
     }
 
-    shush(but, state) {
+    shush(index, state) {
         this.setState({
-            songs: R.update(but, state,
+            current: index,
+            songs: R.update(index, state,
                 R.times(() => false, this.state.count))
         })
     }
@@ -53,7 +54,6 @@ class Player extends Component {
                          title={ "song: " + i}
                          playing={this.state.songs[i]}
                          shush={this.shush}
-                         current={this.state.current}
                          onEnd={this.playNext}/>;
         }, this.state.count);
 
