@@ -21,6 +21,7 @@ class Song extends Component {
                 -------
                 <button
                     type="button"
+                    className="btn btn-default"
                     onClick={this.handleToggle}>
                     <i className={
                     classNames({
