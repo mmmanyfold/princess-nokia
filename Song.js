@@ -28,7 +28,8 @@ class Song extends Component {
                     'fa fa-pause-circle': this.props.playing}) } aria-hidden="true"></i>
                 </button>
                 <Audio src={this.props.src}
-                       playing={this.props.playing}/>
+                       playing={this.props.playing}
+                       onEnd={this.props.onEnd}/>
             </div>
         );
     }

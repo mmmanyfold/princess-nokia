@@ -12,24 +12,36 @@ class Player extends Component {
         super(props);
         this.state = {
             count: 0,
-            songs : []
+            songs: [],
+            current: 0
         }
         this.shush = this.shush.bind(this);
+        this.playNext = this.playNext.bind(this);
     }
 
     shush(but, state) {
         this.setState({
-            songs: R.update(but, state, R.times(() => false, this.state.count))
+            songs: R.update(but, state,
+                R.times(() => false, this.state.count))
         })
+    }
+
+    playNext() {
+        this.setState({
+            current: this.state.current += 1,
+            songs: R.times(() => false, this.state.count)
+        });
+        let next = this.state.current % this.state.count;
+        this.shush(next, true, R.times(() => false, this.state.count))
     }
 
     componentWillMount() {
         // probably call AWS S3 bucket here..
         const c = 5;
         this.setState({
-            count : c,
+            count: c,
             // * initialize all as not playing
-            songs : R.times(() => false, c)
+            songs: R.times(() => false, c)
         });
     }
 
@@ -37,12 +49,14 @@ class Player extends Component {
         const songs = R.times((i) => {
             return <Song key={i}
                          id={i}
-                         src={"http://princess-nokia.s3-website-us-east-1.amazonaws.com/music/song.wav"}
+                         src={"http://princess-nokia.s3-website-us-east-1.amazonaws.com/music/song2.wav"}
                          title={ "song: " + i}
                          playing={this.state.songs[i]}
-                         shush={this.shush}/>;
+                         shush={this.shush}
+                         current={this.state.current}
+                         onEnd={this.playNext}/>;
         }, this.state.count);
-        
+
         return (<div className="Player">
             {songs}
         </div>);
