@@ -2,6 +2,7 @@ import Splash from './Splash';
 import AppContainer from './AppContainer';
 import Main from './Main';
 import Music from './Music';
+import Tour from './Tour';
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory} from 'react-router';
 
@@ -14,6 +15,7 @@ const routes = (<Router history={browserHistory}>
             <IndexRoute component={Main}/>
             <Route path="/main" component={Main}/>
             <Route path="/music" component={Music}/>
+            <Route path="/tour" component={Tour}/>
         </Route>
     </Route>
     <Route path='/princess-nokia'>
