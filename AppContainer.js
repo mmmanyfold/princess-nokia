@@ -60,10 +60,12 @@ class AppContainer extends React.Component {
                                      onMouseOut={this.rollover.bind(this, "Shop", 0)}/>
                             </li>
                             <li>
-                                <img className="nav_tour"
-                                     src={this.state.Tour}
-                                     onMouseOver={this.rollover.bind(this, "Tour", 1)}
-                                     onMouseOut={this.rollover.bind(this, "Tour", 0)}/>
+                                <Link to="tour">
+                                    <img className="nav_tour"
+                                         src={this.state.Tour}
+                                         onMouseOver={this.rollover.bind(this, "Tour", 1)}
+                                         onMouseOut={this.rollover.bind(this, "Tour", 0)}/>
+                                 </Link>
                             </li>
                             <li>
                                 <Link to="music">

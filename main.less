@@ -3,6 +3,16 @@ body {
   color: red;
 }
 
+.nav li a {
+  display: inline;
+}
+
+.nav li {
+  a:focus, a:hover, a:active {
+    background: none;
+  }
+}
+
 .navbar .navbar-nav {
   text-align: center;
   display: inline-block;
@@ -20,13 +30,13 @@ body {
 }
 
 .name {
-  position: absolute;
+  position: fixed;
   left:30px;
   bottom:25px;
 }
 
 .flag {
-  position: absolute;
+  position: fixed;
   right:35px;
   bottom:20px;
   @media (max-width: 767px) {
@@ -36,4 +46,19 @@ body {
 
 .splash {
   text-align: center;
+}
+
+.tour-gallery {
+  height: 100vw;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  -webkit-flex-flow: column wrap; /* Safari */
+  flex-flow:         column wrap;
+  div {
+    width: 33.3%;
+    padding: 15px;
+  }
+  img {
+    width: 100%;
+  }
 }
