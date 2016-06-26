@@ -20,7 +20,7 @@ class Tour extends React.Component {
     let images;
     if(Array.isArray(this.state.flickrData)) {
       images = this.state.flickrData.map((e,i) => {
-        return (<div className={'photo' + i}><img key={i} src={e['url_o']}/></div>);
+        return (<div key={i} className={'photo' + i}><img src={e['url_o']}/></div>);
       });
     }
     return (<div className="tour-gallery">

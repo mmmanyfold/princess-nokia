@@ -33,7 +33,10 @@ class Player extends Component {
             songs: R.times(() => false, this.state.count)
         });
         let next = this.state.current % this.state.count;
-        this.shush(next, true, R.times(() => false, this.state.count))
+        // loop through all songs once
+        if (this.state.count !== this.state.current) {
+            this.shush(next, true, R.times(() => false, this.state.count))
+        }
     }
 
     componentWillMount() {
