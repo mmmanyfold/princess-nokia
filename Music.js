@@ -23,14 +23,16 @@ class Music extends Component {
 		return <div>
 			<b>new album</b>
 			<Player/>
-			<FacebookShareButton
-				url={ShareUrl}
-				title={ShareTitle}>
-				<FacebookIcon size={IconSize} round/>
-			</FacebookShareButton>
-			<TwitterShareButton title={ShareTitle} url={ShareUrl}>
-				<TwitterIcon size={IconSize} round/>
-			</TwitterShareButton>
+			<div className="social-share-container">
+				<FacebookShareButton
+					url={ShareUrl}
+					title={ShareTitle}>
+					<FacebookIcon size={IconSize} round/>
+				</FacebookShareButton>
+				<TwitterShareButton title={ShareTitle} url={ShareUrl}>
+					<TwitterIcon size={IconSize} round/>
+				</TwitterShareButton>
+			</div>
 		</div>;
 	}
 }
