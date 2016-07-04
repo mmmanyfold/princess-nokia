@@ -3,10 +3,6 @@ import Song from './Song';
 import R from 'ramda';
 import axios from 'axios';
 
-// todo:
-// [x] - make only one song play at the time
-// [x] - fetch songs from AWS
-
 class Player extends Component {
 
 	constructor(props) {
