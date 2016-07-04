@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import R from 'ramda';
+import {find, propEq} from 'ramda';
 
 const flickrEndpoint = 'http://princess-nokia-flickr-api.apps.aterial.org/api/photos';
 
@@ -17,7 +17,7 @@ class Tour extends React.Component {
 		axios.get(flickrEndpoint)
 			.then(res => {
 				this.setState({
-					flickrData: R.find(R.propEq('name', 'tour gallery'))(res.data).photos
+					flickrData: find(propEq('name', 'tour gallery'))(res.data).photos
 				});
 			})
 			.catch(err => console.error(err));

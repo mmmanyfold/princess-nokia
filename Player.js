@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Song from './Song';
-import R from 'ramda';
+import {pluck, times, update} from 'ramda';
 import axios from 'axios';
 
 class Player extends Component {
@@ -25,20 +25,20 @@ class Player extends Component {
 	shush(index, state) {
 		this.setState({
 			current: index,
-			songs: R.update(index, state,
-				R.times(() => false, this.state.count))
+			songs: update(index, state,
+				times(() => false, this.state.count))
 		})
 	}
 
 	playNext() {
 		this.setState({
 			current: this.state.current += 1,
-			songs: R.times(() => false, this.state.count)
+			songs: times(() => false, this.state.count)
 		});
 		let next = this.state.current % this.state.count;
 		// loop through all songs once
 		if (this.state.count !== this.state.current) {
-			this.shush(next, true, R.times(() => false, this.state.count))
+			this.shush(next, true, times(() => false, this.state.count))
 		}
 	}
 
@@ -49,18 +49,17 @@ class Player extends Component {
 				const count = data.length;
 				this.setState({
 					count,
-					titles: R.pluck('key')(data),
+					titles: pluck('key')(data),
 					// * initialize all as not playing
-					songs: R.times(() => false, count)
+					songs: times(() => false, count)
 				});
 			})
 			.catch(err => console.log(err));
 	}
 
 
-
 	render() {
-		const songs = R.times((i) => {
+		const songs = times(i => {
 			return <Song key={i}
 			             id={i}
 			             src={this.songUrl(this.state.titles[i])}
