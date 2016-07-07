@@ -32,6 +32,7 @@ class Music extends Component {
 				<TwitterShareButton title={ShareTitle} url={ShareUrl}>
 					<TwitterIcon size={IconSize} round/>
 				</TwitterShareButton>
+				<a className='btn btn-default' href="https://s3.amazonaws.com/princess-nokia/album.zip" target='_blank'>download the music</a>
 			</div>
 		</div>;
 	}
