@@ -15,7 +15,7 @@ fi
 
 #rev=$(git rev-parse --short HEAD)
 
-cd dist
+#cd dist
 
 #git init
 #git config user.name "dviramontes"

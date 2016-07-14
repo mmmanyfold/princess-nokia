@@ -6,7 +6,7 @@ install:
 script:
   # call script for deploying of produced artifacts
   - bash ./.travis-deploy.sh
-
+before_deploy: "cd dist"
 deploy:
   provider: s3
   access_key_id: ${AWS_ACCESS_KEY_ID}
