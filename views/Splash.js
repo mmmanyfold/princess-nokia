@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-var nokia1 = require('./img/Nokia-1.jpg');
+var nokia1 = require('../img/Nokia-1.jpg');
 
 function Splash() {
     return (<div className="splash">

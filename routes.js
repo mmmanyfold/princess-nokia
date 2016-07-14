@@ -1,8 +1,8 @@
-import Splash from './Splash';
+import Splash from './views/Splash';
 import AppContainer from './AppContainer';
-import Main from './Main';
-import Music from './Music';
-import Tour from './Tour';
+import Main from './views/Main';
+import Music from './views/Music';
+import Tour from './views/Tour';
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory} from 'react-router';
 

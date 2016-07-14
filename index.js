@@ -11,6 +11,6 @@ if(process.env.NODE_ENV === 'production') {
     require('file?name=[name].[ext]!./index.html');
 }
 
-require('./main.less'); // load compiled css
+require('./less/main.less'); // load compiled css
 
 ReactDOM.render(routes, document.getElementById('mount'))
