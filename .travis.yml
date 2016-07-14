@@ -3,9 +3,7 @@ node_js:
   - '4.1'
 install:
   - npm install
-script:
-  # call script for deploying of produced artifacts
-  - bash ./.travis-deploy.sh
+script: "npm run clean && npm run build"
 
 deploy:
   provider: s3
