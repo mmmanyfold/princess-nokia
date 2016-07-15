@@ -4,12 +4,11 @@ node_js:
 install:
   - npm install
 script: "npm run build"
-before_deploy: "cd dist"
 
 deploy:
   provider: s3
   access_key_id: ${AWS_ACCESS_KEY_ID}
   secret_access_key: ${AWS_SECRET_ACCESS_KEY}
   bucket: "dev.princessnokia.org"
-  skip_cleanup: false
-  # local_dir: dist
+  skip_cleanup: true
+  local_dir: dist
