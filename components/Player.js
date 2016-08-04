@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Song from './Song';
 import {pluck, times, update} from 'ramda';
 import axios from 'axios';
+import classNames from 'classnames';
 
 class Player extends Component {
 
@@ -16,10 +17,25 @@ class Player extends Component {
 		this.shush = this.shush.bind(this);
 		this.playNext = this.playNext.bind(this);
 		this.songUrl = this.songUrl.bind(this);
+		this.handlePlayingCurrent = this.handlePlayingCurrent.bind(this);
 	}
 
 	songUrl(name) {
 		return `http://princess-nokia.s3-website-us-east-1.amazonaws.com/${name}`;
+	}
+
+	handlePlayingCurrent() {
+		console.log('called..');
+		console.log(this.state);
+		this.setState({
+			current: this.state.current,
+			songs: times(() => false, this.state.count)
+		});
+		if (this.state.count == this.state.current) {
+			this.setState({
+				current: 0
+			});
+		}
 	}
 
 	shush(index, state) {
@@ -84,7 +100,7 @@ class Player extends Component {
 			<div className="Player">
 				<div className="current flex-row">
 					<div className="player-state-button"
-					     onClick={this.handleToggle}>
+					     onClick={this.handlePlayingCurrent}>
 						<i className="fa fa-play-circle fa-3x"></i>
 					</div>
 					<div className="current-title">

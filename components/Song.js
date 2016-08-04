@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Audio from 'react-howler';
-import classNames from 'classnames';
 
 
 class Song extends Component {
