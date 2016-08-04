@@ -20,21 +20,23 @@ const IconSize = 32;
 
 class Music extends Component {
 	render() {
-		return <div>
-			<b>new album</b>
-			<Player/>
-			<div className="social-share-container">
-				<FacebookShareButton
-					url={ShareUrl}
-					title={ShareTitle}>
-					<FacebookIcon size={IconSize} round/>
-				</FacebookShareButton>
-				<TwitterShareButton title={ShareTitle} url={ShareUrl}>
-					<TwitterIcon size={IconSize} round/>
-				</TwitterShareButton>
-				<a className='btn btn-default' href="https://s3.amazonaws.com/princess-nokia/album.zip" target='_blank'>download the music</a>
+		return (
+			<div className="music-view" style={{'left': this.props.left}}>
+				<b>1992</b>
+				<Player/>
+				<div className="social-share-container">
+					<FacebookShareButton
+						url={ShareUrl}
+						title={ShareTitle}>
+						<FacebookIcon size={IconSize} round/>
+					</FacebookShareButton>
+					<TwitterShareButton title={ShareTitle} url={ShareUrl}>
+						<TwitterIcon size={IconSize} round/>
+					</TwitterShareButton>
+					<a className='btn btn-default' href="https://s3.amazonaws.com/princess-nokia/album.zip" target='_blank'>download the music</a>
+				</div>
 			</div>
-		</div>;
+		);
 	}
 }
 

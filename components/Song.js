@@ -4,36 +4,28 @@ import classNames from 'classnames';
 
 
 class Song extends Component {
-    constructor(props) {
-        super(props);
-        this.handleToggle = this.handleToggle.bind(this);
-    }
+	constructor(props) {
+		super(props);
+		this.handleToggle = this.handleToggle.bind(this);
+	}
 
-    handleToggle() {
-        // tell the others to shush!
-        this.props.shush(this.props.id, !this.props.playing);
-    }
+	handleToggle() {
+		// tell the others to shush!
+		this.props.shush(this.props.id, !this.props.playing);
+	}
 
-    render() {
-        return (
-            <div className="Song">
-                <b className="title">{this.props.title}</b>
-                -------
-                <button
-                    type="button"
-                    className="btn btn-default"
-                    onClick={this.handleToggle}>
-                    <i className={
-                    classNames({
-                    'fa fa-play-circle': !this.props.playing,
-                    'fa fa-pause-circle': this.props.playing}) } aria-hidden="true"></i>
-                </button>
-                <Audio src={this.props.src}
-                       playing={this.props.playing}
-                       onEnd={this.props.onEnd}/>
-            </div>
-        );
-    }
+	render() {
+		const title = this.props.title.split('.')[0];
+		return (
+			<div className="Song" onClick={this.handleToggle}>
+				<i className="fa fa-music" aria-hidden="true"></i>
+				<b className="title">{title}</b>
+				<Audio src={this.props.src}
+				       playing={this.props.playing}
+				       onEnd={this.props.onEnd}/>
+			</div>
+		);
+	}
 }
 
 export default Song;

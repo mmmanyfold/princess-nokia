@@ -57,6 +57,17 @@ class Player extends Component {
 			.catch(err => console.log(err));
 	}
 
+//
+// <button
+// type="button"
+// className="btn btn-default"
+// onClick={this.handleToggle}>
+// <i className={
+// 	classNames({
+// 		'fa fa-play-circle': !this.props.playing,
+// 		'fa fa-pause-circle': this.props.playing}) } aria-hidden="true"></i>
+// </button>
+
 
 	render() {
 		const songs = times(i => {
@@ -69,9 +80,22 @@ class Player extends Component {
 			             onEnd={this.playNext}/>;
 		}, this.state.count);
 
-		return (<div className="Player">
-			{songs}
-		</div>);
+		return (
+			<div className="Player">
+				<div className="current flex-row">
+					<div className="player-state-button"
+					     onClick={this.handleToggle}>
+						<i className="fa fa-play-circle fa-3x"></i>
+					</div>
+					<div className="current-title">
+						<span>Princess Nokia</span>
+						<br/>
+						<span className="current-song">title</span>
+					</div>
+				</div>
+				{songs}
+			</div>
+		);
 	}
 }
 
