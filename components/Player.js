@@ -12,28 +12,41 @@ class Player extends Component {
 			count: 0,
 			songs: [],
 			titles: [],
-			current: 0
+			current: 0,
+			isPlaying: false,
+			loading: true
 		}
 		this.shush = this.shush.bind(this);
 		this.playNext = this.playNext.bind(this);
 		this.songUrl = this.songUrl.bind(this);
-		this.handlePlayingCurrent = this.handlePlayingCurrent.bind(this);
+		this.handlePlayPause = this.handlePlayPause.bind(this);
+		this.onLoad = this.onLoad.bind(this);
 	}
 
 	songUrl(name) {
 		return `http://princess-nokia.s3-website-us-east-1.amazonaws.com/${name}`;
 	}
 
-	handlePlayingCurrent() {
-		console.log('called..');
-		console.log(this.state);
-		this.setState({
-			current: this.state.current,
-			songs: times(() => false, this.state.count)
-		});
-		if (this.state.count == this.state.current) {
+	handlePlayPause() {
+		const songs = this.state.songs;
+		const current = this.state.current;
+		// if all we have not played any songs
+		if (songs.every(s=>!s) && this.state.current === 0) {
 			this.setState({
-				current: 0
+				isPlaying: true,
+				songs: update(0, true, songs)
+			});
+			// if currently playing, pause
+		} else if (this.state.isPlaying) {
+			this.setState({
+				isPlaying: !this.state.isPlaying,
+				songs: update(current, false, songs)
+			});
+			// continue where we left off
+		} else {
+			this.setState({
+				isPlaying: !this.state.isPlaying,
+				songs: update(current, true, songs)
 			});
 		}
 	}
@@ -41,6 +54,7 @@ class Player extends Component {
 	shush(index, state) {
 		this.setState({
 			current: index,
+			isPlaying: state,
 			songs: update(index, state,
 				times(() => false, this.state.count))
 		})
@@ -58,6 +72,12 @@ class Player extends Component {
 		}
 	}
 
+	onLoad() {
+		this.setState({
+			loading: false
+		});
+	}
+
 	componentWillMount() {
 		axios.get('http://princess-nokia-api.apps.aterial.org/api/music')
 			.then(res => {
@@ -73,40 +93,38 @@ class Player extends Component {
 			.catch(err => console.log(err));
 	}
 
-//
-// <button
-// type="button"
-// className="btn btn-default"
-// onClick={this.handleToggle}>
-// <i className={
-// 	classNames({
-// 		'fa fa-play-circle': !this.props.playing,
-// 		'fa fa-pause-circle': this.props.playing}) } aria-hidden="true"></i>
-// </button>
-
-
 	render() {
 		const songs = times(i => {
 			return <Song key={i}
+			             active={this.state.current}
 			             id={i}
 			             src={this.songUrl(this.state.titles[i])}
 			             title={this.state.titles[i]}
 			             playing={this.state.songs[i]}
 			             shush={this.shush}
-			             onEnd={this.playNext}/>;
+			             onEnd={this.playNext}
+			             onLoad={this.onLoad}/>;
 		}, this.state.count);
-
+		const currentSong = (this.state.titles[this.state.current] || "").split('.')[0];
+		const loadingDiv = (<div className="loader-container">
+			<div className="loader"></div>
+		</div>);
+		const playPauseButton = (
+			<div className="player-state-button"
+			     onClick={this.handlePlayPause}>
+				<i className={
+						classNames({'fa fa-play-circle fa-3x': !this.state.isPlaying,
+						'fa fa-pause-circle fa-3x': this.state.isPlaying})}
+				   aria-hidden="true"></i>
+			</div>);
 		return (
 			<div className="Player">
 				<div className="current flex-row">
-					<div className="player-state-button"
-					     onClick={this.handlePlayingCurrent}>
-						<i className="fa fa-play-circle fa-3x"></i>
-					</div>
+					{this.state.loading ? loadingDiv : playPauseButton}
 					<div className="current-title">
 						<span>Princess Nokia</span>
 						<br/>
-						<span className="current-song">title</span>
+						<span className="current-song">{currentSong}</span>
 					</div>
 				</div>
 				{songs}

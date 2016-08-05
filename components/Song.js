@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Audio from 'react-howler';
+import classNames from 'classnames';
 
 
 class Song extends Component {
@@ -15,13 +16,19 @@ class Song extends Component {
 
 	render() {
 		const title = this.props.title.split('.')[0];
+		const isActive = this.props.active === this.props.id
+			&& this.props.playing;
 		return (
-			<div className="Song" onClick={this.handleToggle}>
+			<div className={
+			classNames("Song", {"active-song-row": isActive})
+
+			} onClick={this.handleToggle}>
 				<i className="fa fa-music" aria-hidden="true"></i>
 				<b className="title">{title}</b>
 				<Audio src={this.props.src}
 				       playing={this.props.playing}
-				       onEnd={this.props.onEnd}/>
+				       onEnd={this.props.onEnd}
+				       onLoad={this.props.onLoad}/>
 			</div>
 		);
 	}
