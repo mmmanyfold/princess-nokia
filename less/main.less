@@ -47,6 +47,11 @@ body {
 
 .splash {
   #splash-img {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow:         row nowrap;
     position: absolute;
     left:0;
     top:0;
@@ -81,22 +86,24 @@ body {
 }
 
 .music-view {
+  margin-left: 1%;
+  margin-top: 1%;
   position: absolute;
 }
 
 .Player {
-  width: 400px;
-  height: 400px;
+  width: 20em;
+  height: 20em;
   border: 1px black solid;
   background-color: whitesmoke;
   .current {
     border-bottom: 1px black solid;
   }
   .current-title {
-    padding-left: 1em;
+    padding-left: 0.5em;
   }
   .player-state-button {
-    padding: 1em;
+    padding: 0.5em;
     border-right: 1px black solid;
   }
   .current-song {
@@ -131,12 +138,12 @@ body {
 
 .loader-container {
   border-right: 1px black solid;
-  padding: 0.13em;
+  padding: 0.5em;
 }
 
 .loader {
   margin: 0.5em;
-  font-size: 10px;
+  font-size: 5px;
   position: relative;
   text-indent: -9999em;
   border-top: 0.4em solid rgba(255, 255, 255, 0.2);
