@@ -2,6 +2,7 @@ body {
   margin: auto;
   color: blue;
   background: #fff url('../img/city1.jpg') repeat;
+  -webkit-font-smoothing: antialiased;
 }
 
 .flex-row {
@@ -97,14 +98,20 @@ body {
   margin-top: 1%;
   position: absolute;
   font-size: 0.9em;
+  .social-share-container {
+    margin: 0.5em;
+  }
 }
 
 .Player {
   width: 24em;
   border: 1px black solid;
-  background-color: white;
+  border-radius: 10px;
   .current {
-    border-bottom: 1px black solid;
+    border-radius: 9px 9px 0 0;
+    border-bottom: 1px #333 solid;
+    color: white;
+    background-color: #1a1a1a;
   }
   .current-title {
     padding-left: 0.5em;
@@ -112,7 +119,7 @@ body {
   .player-state-button {
     color: #afcf72;
     padding: 0.5em;
-    border-right: 1px black solid;
+    border-right: 1px #333 solid;
   }
   .current-song {
     font-size: larger;
@@ -125,7 +132,7 @@ body {
 
 .Song {
   padding: 0.4em;
-  border-bottom: 1px black solid;
+  border-top: 1px #333 solid;
   cursor: pointer;
   .fa {
     margin: 0.5em;
@@ -142,7 +149,7 @@ body {
 // ***
 
 .loader-container {
-  border-right: 1px black solid;
+  border-right: 1px #333 solid;
   padding: 0.5em;
 }
 

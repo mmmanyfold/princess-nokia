@@ -23,7 +23,7 @@ class Music extends Component {
 		return (
 			<div className="music-view">
 				<Player/>
-				<div className="flex-row">
+				<div className="social-share-container flex-row">
 					<FacebookShareButton
 						url={ShareUrl}
 						title={ShareTitle}>
