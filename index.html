@@ -13,80 +13,18 @@
   <area shape="rect" coords="134,765,261,820" style="outline:none;" href="/lyrics" onmouseover="hoverLyrics()" onmouseout="hoverOff()">
 </map>
 <script src="bundle.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-/*
-* rwdImageMaps jQuery plugin v1.5
-*
-* Allows image maps to be used in a responsive design by recalculating the area coordinates to match the actual image size on load and window.resize
-*
-* Copyright (c) 2013 Matt Stow
-* https://github.com/stowball/jQuery-rwdImageMaps
-* http://mattstow.com
-* Licensed under the MIT license
-*/
-;(function($) {
-  $.fn.rwdImageMaps = function() {
-    var $img = this;
+/*! Image Map Resizer (imageMapResizer.min.js ) - v1.0.3 - 2016-06-16
+ *  Desc: Resize HTML imageMap to scaled image.
+ *  Copyright: (c) 2016 David J. Bradshaw - dave@bradshaw.net
+ *  License: MIT
+ */
 
-    var rwdImageMap = function() {
-      $img.each(function() {
-        if (typeof($(this).attr('usemap')) == 'undefined')
-          return;
-
-        var that = this,
-          $that = $(that);
-
-        // Since WebKit doesn't know the height until after the image has loaded, perform everything in an onload copy
-        $('<img />').load(function() {
-          var attrW = 'width',
-            attrH = 'height',
-            w = $that.attr(attrW),
-            h = $that.attr(attrH);
-
-          if (!w || !h) {
-            var temp = new Image();
-            temp.src = $that.attr('src');
-            if (!w)
-              w = temp.width;
-            if (!h)
-              h = temp.height;
-          }
-
-          var wPercent = $that.width()/100,
-            hPercent = $that.height()/100,
-            map = $that.attr('usemap').replace('#', ''),
-            c = 'coords';
-
-          $('map[name="' + map + '"]').find('area').each(function() {
-            var $this = $(this);
-            if (!$this.data(c))
-              $this.data(c, $this.attr(c));
-
-            var coords = $this.data(c).split(','),
-              coordsPercent = new Array(coords.length);
-
-            for (var i = 0; i < coordsPercent.length; ++i) {
-              if (i % 2 === 0)
-                coordsPercent[i] = parseInt(((coords[i]/w)*100)*wPercent);
-              else
-                coordsPercent[i] = parseInt(((coords[i]/h)*100)*hPercent);
-            }
-            $this.attr(c, coordsPercent.toString());
-          });
-        }).attr('src', $that.attr('src'));
-      });
-    };
-    $(window).resize(rwdImageMap).trigger('resize');
-
-    return this;
-  };
-})(jQuery);
+!function(){"use strict";function a(){function a(){function a(a,c){function d(a){var c=1===(e=1-e)?"width":"height";return Math.floor(Number(a)*b[c])}var e=0;i[c].coords=a.split(",").map(d).join(",")}var b={width:k.width/k.naturalWidth,height:k.height/k.naturalHeight};j.forEach(a)}function b(a){return a.coords.replace(/ *, */g,",").replace(/ +/g,",")}function c(){clearTimeout(l),l=setTimeout(a,250)}function d(){(k.width!==k.naturalWidth||k.height!==k.naturalHeight)&&a()}function e(){k.addEventListener("load",a,!1),window.addEventListener("focus",a,!1),window.addEventListener("resize",c,!1),window.addEventListener("readystatechange",a,!1),document.addEventListener("fullscreenchange",a,!1)}function f(){return"function"==typeof h._resize}function g(){i=h.getElementsByTagName("area"),j=Array.prototype.map.call(i,b),k=document.querySelector('img[usemap="#'+h.name+'"]'),h._resize=a}var h=this,i=null,j=null,k=null,l=null;f()?h._resize():(g(),e(),d())}function b(){function b(a){if(!a.tagName)throw new TypeError("Object is not a valid DOM element");if("MAP"!==a.tagName.toUpperCase())throw new TypeError("Expected <MAP> tag, found <"+a.tagName+">.")}function c(c){c&&(b(c),a.call(c),d.push(c))}var d;return function(a){switch(d=[],typeof a){case"undefined":case"string":Array.prototype.forEach.call(document.querySelectorAll(a||"map"),c);break;case"object":c(a);break;default:throw new TypeError("Unexpected data type ("+typeof a+").")}return d}}"function"==typeof define&&define.amd?define([],b):"object"==typeof module&&"object"==typeof module.exports?module.exports=b():window.imageMapResize=b(),"jQuery"in window&&(jQuery.fn.imageMapResize=function(){return this.filter("map").each(a).end()})}();
+//# sourceMappingURL=imageMapResizer.map
 </script>
 <script>
-  $(document).ready(function(){
-    $("img[usemap]").rwdImageMaps();
-  });
+  imageMapResize();
   splash5img = new Image(396,1080)
   splash5img.src = "ec5a48c967173cb2bc511b2d95b4df31.jpg"
   splash5hover1 = new Image(396,1080)
