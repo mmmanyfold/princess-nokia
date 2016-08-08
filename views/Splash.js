@@ -40,7 +40,7 @@ class Splash extends Component {
             <img src={splash1}/>
             <img src={splash2}/>
             <img src={splash3}/>
-            <div>
+            <div className="splash-with-player">
               <Music/>
               <img src={splash4}/>
             </div>
