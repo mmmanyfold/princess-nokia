@@ -24,7 +24,7 @@ class Song extends Component {
 
 			} onClick={this.handleToggle}>
 				<i className="fa fa-music" aria-hidden="true"></i>
-				<b className="title">{title}</b>
+				<span className="title">{title}</span>
 				<Audio src={this.props.src}
 				       playing={this.props.playing}
 				       onEnd={this.props.onEnd}

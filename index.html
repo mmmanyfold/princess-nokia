@@ -8,6 +8,94 @@
 </head>
 <body>
 <div id="mount"></div>
+<map name="splash5">
+  <area shape="rect" coords="42,687,352,731" style="outline:none;" href="https://s3.amazonaws.com/princess-nokia/album.zip" onmouseover="hoverDownload()" onmouseout="hoverOff()">
+  <area shape="rect" coords="134,765,261,820" style="outline:none;" href="/lyrics" onmouseover="hoverLyrics()" onmouseout="hoverOff()">
+</map>
 <script src="bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+/*
+* rwdImageMaps jQuery plugin v1.5
+*
+* Allows image maps to be used in a responsive design by recalculating the area coordinates to match the actual image size on load and window.resize
+*
+* Copyright (c) 2013 Matt Stow
+* https://github.com/stowball/jQuery-rwdImageMaps
+* http://mattstow.com
+* Licensed under the MIT license
+*/
+;(function($) {
+  $.fn.rwdImageMaps = function() {
+    var $img = this;
+
+    var rwdImageMap = function() {
+      $img.each(function() {
+        if (typeof($(this).attr('usemap')) == 'undefined')
+          return;
+
+        var that = this,
+          $that = $(that);
+
+        // Since WebKit doesn't know the height until after the image has loaded, perform everything in an onload copy
+        $('<img />').load(function() {
+          var attrW = 'width',
+            attrH = 'height',
+            w = $that.attr(attrW),
+            h = $that.attr(attrH);
+
+          if (!w || !h) {
+            var temp = new Image();
+            temp.src = $that.attr('src');
+            if (!w)
+              w = temp.width;
+            if (!h)
+              h = temp.height;
+          }
+
+          var wPercent = $that.width()/100,
+            hPercent = $that.height()/100,
+            map = $that.attr('usemap').replace('#', ''),
+            c = 'coords';
+
+          $('map[name="' + map + '"]').find('area').each(function() {
+            var $this = $(this);
+            if (!$this.data(c))
+              $this.data(c, $this.attr(c));
+
+            var coords = $this.data(c).split(','),
+              coordsPercent = new Array(coords.length);
+
+            for (var i = 0; i < coordsPercent.length; ++i) {
+              if (i % 2 === 0)
+                coordsPercent[i] = parseInt(((coords[i]/w)*100)*wPercent);
+              else
+                coordsPercent[i] = parseInt(((coords[i]/h)*100)*hPercent);
+            }
+            $this.attr(c, coordsPercent.toString());
+          });
+        }).attr('src', $that.attr('src'));
+      });
+    };
+    $(window).resize(rwdImageMap).trigger('resize');
+
+    return this;
+  };
+})(jQuery);
+</script>
+<script>
+  $(document).ready(function(){
+    $("img[usemap]").rwdImageMaps();
+  });
+  splash5img = new Image(396,1080)
+  splash5img.src = "img/splash/splash5.jpg"
+  splash5hover1 = new Image(396,1080)
+  splash5hover1.src = "img/splash/splash5-album-hover.jpg"
+  splash5hover2 = new Image(396,1080)
+  splash5hover2.src = "img/splash/splash5-lyrics-hover.jpg"
+  function hoverDownload() {document.splash5.src = splash5hover1.src; return true;}
+  function hoverLyrics() {document.splash5.src = splash5hover2.src; return true;}
+  function hoverOff() {document.splash5.src = splash5img.src; return true;}
+</script>
 </body>
 </html>

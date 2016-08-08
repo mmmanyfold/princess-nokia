@@ -122,12 +122,14 @@ class Player extends Component {
 				<div className="current flex-row">
 					{this.state.loading ? loadingDiv : playPauseButton}
 					<div className="current-title">
-						<span>Princess Nokia</span>
+						<span>1992</span>
 						<br/>
-						<span className="current-song">{currentSong}</span>
+						<b className="current-song">{currentSong}</b>
 					</div>
 				</div>
-				{songs}
+				<div className="songs">
+					{songs}
+				</div>
 			</div>
 		);
 	}
