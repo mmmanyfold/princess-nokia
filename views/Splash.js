@@ -12,6 +12,7 @@ const splash3 = require('../img/splash/splash3.jpg');
 const splash4 = require('../img/splash/splash4.jpg');
 const splash5 = require('../img/splash/splash5.jpg');
 const splash6 = require('../img/splash/splash6.jpg');
+const gif = require('../img/gif.gif');
 
 class Splash extends Component {
 
@@ -37,6 +38,7 @@ class Splash extends Component {
         return (
         <div className="splash">
           <div id="splash-img">
+            <img src={gif}/>
             <img src={splash1}/>
             <img src={splash2}/>
             <img src={splash3}/>
