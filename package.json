@@ -21,7 +21,6 @@
     "bootstrap": "^3.3.6",
     "classnames": "^2.2.5",
     "history": "^3.0.0",
-    "image-map-resizer": "^1.0.3",
     "jquery": "^3.0.0",
     "ramda": "^0.21.0",
     "react": "^0.14.3",
