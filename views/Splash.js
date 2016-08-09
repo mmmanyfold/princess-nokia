@@ -9,9 +9,6 @@ const car = require('../img/splash/car.png');
 const splash1 = require('../img/splash/splash1.jpg');
 const splash2 = require('../img/splash/splash2.gif');
 const splash3 = require('../img/splash/splash3.jpg');
-const splash4 = require('../img/splash/splash4.jpg');
-const splash5 = require('../img/splash/splash5.jpg');
-const splash6 = require('../img/splash/splash6.jpg');
 
 class Splash extends Component {
 
@@ -39,13 +36,10 @@ class Splash extends Component {
           <div id="splash-img">
             <img src={splash1}/>
             <img src={splash2}/>
-            <img src={splash3}/>
+            <img width="706" height="1080" src={splash3} useMap="#splash3" name="splash3"/>
             <div className="splash-with-player">
               <Music/>
-              <img src={splash4}/>
             </div>
-            <img width="396" height="1080" src={splash5} useMap="#splash5" name="splash5"/>
-            <img src={splash6}/>
           </div>
           <img id="splash-car" height="10%" src={car}
                style={{left: this.state.carLeftPosition + carOffset}}/>
