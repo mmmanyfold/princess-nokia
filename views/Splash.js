@@ -55,9 +55,9 @@ class Splash extends Component {
         return (
         <div>
           <div className="splash">
-            <div><img className="splash-img" src={splash1}/></div>
-            <div><img className="splash-img" src={splash2}/></div>
-            <div><img className="splash-img" width="706" height="1080" src={splash3} useMap="#splash3" name="splash3"/></div>
+            <img className="splash-img" src={splash1}/>
+            <img className="splash-img" src={splash2}/>
+            <img className="splash-img" width="706" height="1080" src={splash3} useMap="#splash3" name="splash3"/>
             <div id="lyrics">
               <img src={tomboy}/>
               <img src={kitana}/>
