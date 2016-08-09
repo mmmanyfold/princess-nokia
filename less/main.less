@@ -55,32 +55,34 @@ body {
 }
 
 .splash {
-  #splash-img {
+  background-color: white;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow:         row nowrap;
+  position: absolute;
+  left:0;
+  top:0;
+  .splash-img {
     height: 100%;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row nowrap;
-    flex-flow:         row nowrap;
-    position: absolute;
-    left:0;
-    top:0;
-    img {
-      height: 100%;
-      width: auto;
-    }
-    .splash-with-player {
-      height: 100%;
-      img {
-        height: 100%;
-        width: auto;
-      }
-    }
+    width: auto;
   }
   #splash-car {
     position: absolute;
     left:0;
     bottom: 3%;
     transition: left 0.125s ease-out;
+  }
+  #lyrics {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: 3.5em;
+    img {
+      width: 585px;
+    }
   }
 }
 
@@ -103,7 +105,6 @@ body {
   color: black;
   margin-left: 1.5%;
   margin-top: 1%;
-  position: absolute;
   font-size: 0.9em;
   .social-share-container {
     margin: 0.5em;
@@ -131,10 +132,6 @@ body {
   }
   .current-song {
     font-size: larger;
-  }
-  .songs {
-    height: 18em;
-    overflow-y: auto;
   }
 }
 

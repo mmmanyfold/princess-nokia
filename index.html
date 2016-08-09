@@ -10,7 +10,7 @@
 <div id="mount"></div>
 <map name="splash3">
   <area shape="rect" coords="113,323,573,388" style="outline:none;" href="https://s3.amazonaws.com/princess-nokia/album.zip" onmouseover="hoverDownload()" onmouseout="hoverOff()">
-  <area shape="rect" coords="336,478,571,571" style="outline:none;" href="/lyrics" onmouseover="hoverLyrics()" onmouseout="hoverOff()">
+  <area shape="rect" coords="336,478,571,571" style="outline:none;" href="/lyrics" onmouseover="hoverLyrics()" onmouseout="hoverOff()" onclick="showLyrics()">
 </map>
 <script src="bundle.js"></script>
 <script>
@@ -26,7 +26,7 @@
 <script>
   imageMapResize();
   splash3img = new Image(706,1080)
-  splash3img.src = "ec5a48c967173cb2bc511b2d95b4df31.jpg"
+  splash3img.src = "splash3.jpg"
   splash3hover1 = new Image(706,1080)
   splash3hover1.src = "splash3-album-hover.jpg"
   splash3hover2 = new Image(706,1080)
@@ -34,6 +34,7 @@
   function hoverDownload() {document.splash3.src = splash3hover1.src; return true;}
   function hoverLyrics() {document.splash3.src = splash3hover2.src; return true;}
   function hoverOff() {document.splash3.src = splash3img.src; return true;}
+  function showLyrics() {document.getElementById("lyrics").style.display = "block";}
 </script>
 </body>
 </html>
