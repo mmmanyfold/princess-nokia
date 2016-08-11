@@ -13,6 +13,7 @@ const splash1b = require('../img/splash/splash1b.jpg');
 const splash2 = require('../img/splash/splash2.jpg');
 const splash2_album = require('../img/splash/splash2-hover-album.jpg');
 const splash2_lyrics = require('../img/splash/splash2-hover-lyrics.jpg');
+const splash3 = require('../img/splash/splash3.jpg');
 
 const Hovers = {
   Splash2: [splash2, splash2_album, splash2_lyrics]
@@ -97,8 +98,9 @@ class Splash extends Component {
               <img src={bart}/>
             </div>
             <div className="flex-column">
-              <img src={rocket}/>
+              <img id="rocket" src={rocket}/>
             </div>
+            <img className="splash-img" src={splash3}/>
           </div>
         </div>);
     }
