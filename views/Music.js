@@ -18,10 +18,13 @@ const ShareTitle = 'Listen to xyz...';
 const ShareUrl = 'http://localhost:3000';
 const IconSize = 25;
 
+const bw1992 = require('../img/splash/1992.jpg')
+
 class Music extends Component {
 	render() {
 		return (
 			<div className="music-view">
+				<center><img src={bw1992}/></center>
 				<Player/>
 				<div className="social-share-container flex-row">
 					<FacebookShareButton
