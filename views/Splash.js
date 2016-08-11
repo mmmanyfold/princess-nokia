@@ -39,9 +39,10 @@ class Splash extends Component {
             carLeftPosition: 0,
             Splash2: Hovers.Splash2[0]
         };
+        this.handleHover = this.handleHover.bind(this);
     }
 
-    hover(type, n) {
+    handleHover(type, n) {
         this.setState({[type]: Hovers[type][n]});
     }
 
@@ -55,8 +56,7 @@ class Splash extends Component {
 
         imageMapResize();
         $('.carousel').carousel("pause");
-        $(".carousel").hover(
-          function() {
+        $(".carousel").hover(function() {
             $(".carousel").carousel("next");
             $(".carousel").carousel("cycle");
           }, function() {
@@ -85,8 +85,10 @@ class Splash extends Component {
             </div>
             <img className="splash-img" width="706" height="1080" src={this.state.Splash2} useMap="#splash2" id="splash2"/>
             <map name="splash2">
-              <area shape="rect" coords="242,750,699,817" href="https://s3.amazonaws.com/princess-nokia/album.zip" onmouseover="hoverDownload()" onmouseout="hoverOff()"/>
-              <area shape="rect" coords="507,902,698,983" href="#" onmouseover={$('#splash2').hover.bind(this, "Splash2", 1)} onmouseout={$('#splash2').hover.bind(this, "Splash2", 0)} onclick=""/>
+              <area shape="rect" coords="242,750,699,817" href="https://s3.amazonaws.com/princess-nokia/album.zip"/>
+              <area shape="rect" coords="507,902,698,983" href="#"
+                    onMouseOver={this.handleHover.bind(this, "Splash2", 1)}
+                    onMouseOut={this.handleHover.bind(this, "Splash2", 0)}/>
             </map>
             <div id="lyrics">
               <img src={tomboy}/>
