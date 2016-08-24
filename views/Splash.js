@@ -7,7 +7,6 @@ import imageMapResize from 'image-map-resizer';
 const car = require('../img/splash/car.png');
 const rocket = require('../img/splash/rocket.png');
 
-const bw1992 = require('../img/splash/1992.jpg')
 const splash1a = require('../img/splash/splash1a.jpg');
 const splash1b = require('../img/splash/splash1b.jpg');
 const splash2 = require('../img/splash/splash2.jpg');
@@ -44,6 +43,10 @@ class Splash extends Component {
 
     handleHover(type, n) {
         this.setState({[type]: Hovers[type][n]});
+    }
+
+    handleShowLyrics() {
+        $('#lyrics').toggle('slide');
     }
 
     componentDidMount() {
@@ -92,7 +95,7 @@ class Splash extends Component {
               <area shape="rect" coords="507,902,698,983" href="#"
                     onMouseOver={this.handleHover.bind(this, "Splash2", 2)}
                     onMouseOut={this.handleHover.bind(this, "Splash2", 0)}
-                    onClick=""/>
+                    onClick={this.handleShowLyrics}/>
             </map>
             <div id="lyrics">
               <img src={tomboy}/>
