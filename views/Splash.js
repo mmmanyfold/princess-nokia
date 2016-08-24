@@ -59,13 +59,9 @@ class Splash extends Component {
 
         imageMapResize();
 
-        $('.carousel').carousel("pause");
         $(".carousel").hover(function() {
-            $(".carousel").carousel("next");
-            $(".carousel").carousel("cycle");
-          }, function() {
-            $(".carousel").carousel("pause");
-          });
+          $(".carousel").carousel("next");
+        });
     }
 
     render() {
@@ -77,8 +73,8 @@ class Splash extends Component {
                  style={{left: this.state.carLeftPosition + carOffset}}/>
             <img className="splash-img" src={splash1a}/>
             <div className="splash-player">
-              <Music/>
               <img className="splash-img" src={splash1b}/>
+              <Music/>
             </div>
             <div className="carousel" data-interval="2500">
               <div className="carousel-inner">
