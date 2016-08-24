@@ -55,6 +55,7 @@ class Splash extends Component {
         });
 
         imageMapResize();
+
         $('.carousel').carousel("pause");
         $(".carousel").hover(function() {
             $(".carousel").carousel("next");
@@ -85,10 +86,13 @@ class Splash extends Component {
             </div>
             <img className="splash-img" width="706" height="1080" src={this.state.Splash2} useMap="#splash2" id="splash2"/>
             <map name="splash2">
-              <area shape="rect" coords="242,750,699,817" href="https://s3.amazonaws.com/princess-nokia/album.zip"/>
-              <area shape="rect" coords="507,902,698,983" href="#"
+              <area shape="rect" coords="242,750,699,817" href="https://s3.amazonaws.com/princess-nokia/album.zip"
                     onMouseOver={this.handleHover.bind(this, "Splash2", 1)}
                     onMouseOut={this.handleHover.bind(this, "Splash2", 0)}/>
+              <area shape="rect" coords="507,902,698,983" href="#"
+                    onMouseOver={this.handleHover.bind(this, "Splash2", 2)}
+                    onMouseOut={this.handleHover.bind(this, "Splash2", 0)}
+                    onClick=""/>
             </map>
             <div id="lyrics">
               <img src={tomboy}/>
