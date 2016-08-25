@@ -62,6 +62,22 @@ class Splash extends Component {
         $(".carousel").hover(function() {
           $(".carousel").carousel("next");
         });
+
+        // init controller
+        const controller = new ScrollMagic.Controller({vertical: false});
+	    const tween = TweenMax.to(".rocket-container", 0.5, {bottom: "+=500"});
+	    const tween2 = TweenMax.to(".rocket-container", 0.5, {top: "+=500"});
+
+        // create a scene
+        const t = new ScrollMagic.Scene({
+        	triggerElement: "#splash2",
+	        duration: 1000
+        }).setTween(tween).addTo(controller); // assign the scene to the controller
+
+        const w = new ScrollMagic.Scene({
+            triggerElement: "#tomboy",
+            duration: 1000
+        }).setTween(tween2).addTo(controller);
     }
 
     render() {
@@ -102,10 +118,12 @@ class Splash extends Component {
               <img src={excellent}/>
               <img src={bart}/>
             </div>
-            <div className="flex-column">
-              <img id="rocket" src={rocket}/>
-            </div>
-            <img className="splash-img" src={splash3}/>
+              <div style={{width:350}}>
+                <div className="rocket-container">
+                  <img id="rocket" src={rocket}/>
+                </div>
+              </div>
+            <img id="tomboy" className="splash-img" src={splash3}/>
           </div>
         </div>);
     }
