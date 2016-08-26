@@ -65,8 +65,8 @@ class Splash extends Component {
 
         // init controller
         const controller = new ScrollMagic.Controller({vertical: false});
-	    const tween = TweenMax.to(".rocket-container", 0.5, {bottom: "+=500"});
-	    const tween2 = TweenMax.to(".rocket-container", 0.5, {top: "+=500"});
+	    const tween = TweenMax.to(".rocket-container", 0.5, {bottom: "+=500", top: "-100"});
+	    const tween2 = TweenMax.to(".rocket-container", 0.5, {top: "-=500"});
 
         // create a scene
         const t = new ScrollMagic.Scene({
