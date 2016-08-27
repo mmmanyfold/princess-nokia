@@ -24,7 +24,7 @@ class Player extends Component {
 	}
 
 	songUrl(name) {
-		return `http://princess-nokia.s3-website-us-east-1.amazonaws.com/${name}`;
+		return `http://d2jrb1r3hjk0r6.cloudfront.net/${name}`;
 	}
 
 	handlePlayPause() {
