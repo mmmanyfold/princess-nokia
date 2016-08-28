@@ -39,6 +39,7 @@ class AppContainer extends React.Component {
 
     render() {
         return (<div>
+            {/**
             <nav className="navbar">
                 <div className="container-fluid">
                     <div className="navbar-header">
@@ -85,15 +86,18 @@ class AppContainer extends React.Component {
                     </div>
                 </div>
             </nav>
+            **/}
             <div className="container">
                 {this.props.children}
             </div>
+            {/**
             <div className="name">
                 <Link to="main">
                     <img width="85%" src={princessNokia}/>
                 </Link>
             </div>
             <div className="flag"><img src={flag}/></div>
+            **/}
         </div>);
     }
 }

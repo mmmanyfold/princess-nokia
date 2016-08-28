@@ -127,9 +127,6 @@ class Player extends Component {
 						<b className="current-song">{currentSong}</b>
 					</div>
 				</div>
-				<div className="songs">
-					{songs}
-				</div>
 			</div>
 		);
 	}
