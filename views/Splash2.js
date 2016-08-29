@@ -49,7 +49,10 @@ class Splash2 extends Component {
             </div>
             <div className="flex-col-item2">
               <div className="flex-row links">
-                <div className="flex-row-item"></div>
+                <div className="flex-row-item down">
+                  <i className="fa fa-angle-double-down" aria-hidden="true"></i>
+                  <span>scroll for lyrics</span>
+                </div>
                 <div className="flex-row-item download">
                   <a className="hvr-icon-down" href="https://s3.amazonaws.com/princess-nokia/album.zip">
                     <span>Download Album</span>
