@@ -48,11 +48,11 @@ class Splash2 extends Component {
               <img className="main" src={splash}/>
             </div>
             <div className="flex-col-item2">
-              <div className="flex-row buttons">
+              <div className="flex-row links">
                 <div className="flex-row-item"></div>
                 <div className="flex-row-item download">
                   <a className="hvr-icon-down" href="https://s3.amazonaws.com/princess-nokia/album.zip">
-                    <img src={download}/>
+                    <span>Download Album</span>
                   </a>
                 </div>
                 <div className="flex-row-item arrow">
@@ -64,6 +64,15 @@ class Splash2 extends Component {
             </div>
           </div>
           <Music/>
+          <div id="lyrics">
+            <img src={tomboy}/>
+            <img src={kitana}/>
+            <img src={bruja}/>
+            <img src={saggy}/>
+            <img src={mine}/>
+            <img src={excellent}/>
+            <img src={bart}/>
+          </div>
         </div>);
     }
 }

@@ -4,7 +4,7 @@ html {
 body {
   margin: auto;
   color: blue;
-  background: #fff url('../img/city1.jpg') repeat;
+  background: #fff url('../img/city1.jpg') repeat center;
   -webkit-font-smoothing: antialiased;
   height: 100%;
 }
@@ -32,7 +32,7 @@ map area {
   flex-flow:         column nowrap;
   margin-top: auto;
   align-items: center;
-  @media (min-width: 1140px) {
+  @media (min-width: 1060px) {
     height: 100%;
   }
 }
@@ -84,41 +84,61 @@ map area {
   text-align: center;
   img.main {
     width: 100%;
-    @media (min-width: 1140px) {
+    @media (min-width: 1060px) {
       height: 100%;
       width: auto;
     }
   }
-  .buttons {
+  .links {
     position: relative;
     height: 100%;
   }
   .flex-row-item {
-    width: 33%;
+    width: 33.3%;
   }
   .flex-col-item1 {
     width: 100%;
-    @media (min-width: 1140px) {
-      height: 90%;
+    @media (min-width: 1060px) {
+      height: 82%;
     }
   }
   .flex-col-item2 {
     width: 100%;
-    @media (min-width: 1140px) {
+    @media (min-width: 1060px) {
       height: 10%;
     }
   }
   .download {
-    text-align: center;
-    img {
-      width: 55%;
+    a {
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    span {
+      padding-right: 0.5em;
+      padding-left: 1em;
     }
   }
   .arrow {
     text-align: right;
+    @media (min-width: 1060px) {
+      height: 100%;
+    }
     img {
       width: 50%;
+      @media (min-width: 1060px) {
+        height: 100%;
+        width: auto;
+      }
     }
+  }
+  #lyrics {
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+    margin-bottom: 6em;
   }
 }
 
@@ -191,16 +211,18 @@ map area {
 .music-view {
   width: 100%;
   color: black;
-  margin: 0 auto;
   font-size: 0.9em;
-  img {
-    width: 50%;
-  }
   .social-share-container {
     margin: 0.5em;
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+    justify-content: flex-end;
   }
-  @media (min-width: 1140px) {
+  @media (min-width: 1060px) {
     margin-top: 0.5em;
+    position: fixed;
+    bottom: 0;
   }
 }
 
