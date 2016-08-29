@@ -21,6 +21,8 @@ class Player extends Component {
 		this.songUrl = this.songUrl.bind(this);
 		this.handlePlayPause = this.handlePlayPause.bind(this);
 		this.onLoad = this.onLoad.bind(this);
+		this.handlePlayNext = this.handlePlayNext.bind(this);
+		this.handlePlayPrevious = this.handlePlayPrevious.bind(this);
 	}
 
 	songUrl(name) {
@@ -57,7 +59,7 @@ class Player extends Component {
 			isPlaying: state,
 			songs: update(index, state,
 				times(() => false, this.state.count))
-		})
+		});
 	}
 
 	playNext() {
@@ -68,8 +70,27 @@ class Player extends Component {
 		let next = this.state.current % this.state.count;
 		// loop through all songs once
 		if (this.state.count !== this.state.current) {
-			this.shush(next, true, times(() => false, this.state.count))
+			this.shush(next, true, times(() => false, this.state.count));
 		}
+	}
+
+	handlePlayPrevious() {
+		this.setState({
+			current: this.state.current -= 1,
+			songs: times(() => false, this.state.count)
+		});
+		let next = this.state.current % this.state.count;
+		this.shush(next, true, times(() => false, this.state.count))
+
+	}
+
+	handlePlayNext() {
+		this.setState({
+			current: this.state.current += 1,
+			songs: times(() => false, this.state.count)
+		});
+		let next = this.state.current % this.state.count;
+		this.shush(next, true, times(() => false, this.state.count));
 	}
 
 	onLoad() {
@@ -117,15 +138,30 @@ class Player extends Component {
 						'fa fa-pause-circle fa-3x': this.state.isPlaying})}
 				   aria-hidden="true"></i>
 			</div>);
+		const playNextButton = (
+			<div className="player-state-button"
+			     onClick={this.handlePlayNext}>
+				<i className="fa fa-step-forward fa-3x" aria-hidden="true"></i>
+			</div>);
+		const playPreviousButton = (
+			<div className="player-state-button"
+			     onClick={this.handlePlayPrevious}>
+				<i className="fa fa-step-backward fa-3x" aria-hidden="true"></i>
+			</div>);
 		return (
 			<div className="Player">
 				<div className="current flex-row">
+					{playPreviousButton}
 					{this.state.loading ? loadingDiv : playPauseButton}
+					{playNextButton}
 					<div className="current-title">
 						<span>1992</span>
 						<br/>
 						<b className="current-song">{currentSong}</b>
 					</div>
+				</div>
+				<div className="songs">
+					{songs}
 				</div>
 			</div>
 		);
