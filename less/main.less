@@ -1,7 +1,10 @@
+html {
+  height: 100%;
+}
 body {
   margin: auto;
   color: blue;
-  background: #fff url('../img/city1.jpg') repeat;
+  background: #fff url('../img/city1.jpg') repeat center;
   -webkit-font-smoothing: antialiased;
   height: 100%;
 }
@@ -10,12 +13,17 @@ map area {
   outline: none;
 }
 
+#mount {
+  height: 100%;
+}
+
 .flex-row {
   display: -webkit-flex; /* Safari */
   display: flex;
   -webkit-flex-flow: row nowrap; /* Safari */
   flex-flow:         row nowrap;
   align-items: center;
+  width: 100%;
 }
 .flex-column {
   display: -webkit-flex; /* Safari */
@@ -23,6 +31,10 @@ map area {
   -webkit-flex-flow: column nowrap; /* Safari */
   flex-flow:         column nowrap;
   margin-top: auto;
+  align-items: center;
+  @media (min-width: 1060px) {
+    height: 100%;
+  }
 }
 
 .nav li a {
@@ -63,6 +75,70 @@ map area {
   bottom:20px;
   @media (max-width: 767px) {
     display: none;
+  }
+}
+
+.splash2 {
+  background-color: #fff;
+  height: 100%;
+  text-align: center;
+  img.main {
+    width: 100%;
+    @media (min-width: 1060px) {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .links {
+    position: relative;
+    height: 100%;
+  }
+  .flex-row-item {
+    width: 33.3%;
+  }
+  .flex-col-item1 {
+    width: 100%;
+    @media (min-width: 1060px) {
+      height: 82%;
+    }
+  }
+  .flex-col-item2 {
+    width: 100%;
+    @media (min-width: 1060px) {
+      height: 10%;
+    }
+  }
+  .download {
+    a {
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    span {
+      padding-right: 0.5em;
+      padding-left: 1em;
+    }
+  }
+  .arrow {
+    text-align: right;
+    @media (min-width: 1060px) {
+      height: 100%;
+    }
+    img {
+      width: 50%;
+      @media (min-width: 1060px) {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+  #lyrics {
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+    margin-bottom: 6em;
   }
 }
 
@@ -133,27 +209,28 @@ map area {
 }
 
 .music-view {
-  position: relative;
-  width: 21em;
+  width: 100%;
   color: black;
-  margin: 0 auto;
-  margin-top: -160%;
   font-size: 0.9em;
-  img {
-    width: 50%;
-  }
   .social-share-container {
     margin: 0.5em;
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+    justify-content: flex-end;
+  }
+  @media (min-width: 1060px) {
+    margin-top: 0.5em;
+    position: fixed;
+    bottom: 0;
   }
 }
 
 .Player {
-  // margin: 0 auto;
-  width: 21em;
+  text-align: left;
+  width: 100%;
   border: 1px black solid;
-  border-radius: 10px;
   .current {
-    border-radius: 9px 9px 0 0;
     border-bottom: 1px #333 solid;
     color: white;
     background-color: #1a1a1a;
@@ -234,4 +311,66 @@ map area {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+/* Icon Down */
+@-webkit-keyframes hvr-icon-down {
+  0%,
+  50%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  25%,
+  75% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+@keyframes hvr-icon-down {
+  0%,
+  50%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  25%,
+  75% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+
+/* Icon Down */
+.hvr-icon-down {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  padding-right: 2.2em;
+}
+.hvr-icon-down:before {
+  content: "\f063";
+  position: absolute;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.hvr-icon-down:hover:before, .hvr-icon-down:focus:before, .hvr-icon-down:active:before {
+  -webkit-animation-name: hvr-icon-down;
+  animation-name: hvr-icon-down;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
 }
