@@ -15,7 +15,7 @@ const kitana = require('../img/splash/lyrics-kitana.png');
 const bruja = require('../img/splash/lyrics-bruja.png');
 const saggy = require('../img/splash/lyrics-saggy.png');
 const mine = require('../img/splash/lyrics-mine.png');
-const excellent = require('../img/splash/lyrics-mine.png');
+const excellent = require('../img/splash/lyrics-excellent.png');
 const bart = require('../img/splash/lyrics-bart.png');
 
 const Hovers = {
