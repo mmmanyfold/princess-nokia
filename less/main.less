@@ -4,7 +4,7 @@ html {
 body {
   margin: auto;
   color: blue;
-  background: #fff url('../img/city1.jpg') repeat center;
+  background: #fff url('../img/splash/map.jpg') repeat center;
   -webkit-font-smoothing: antialiased;
   height: 100%;
 }
@@ -214,10 +214,12 @@ map area {
   font-size: 0.9em;
   .social-share-container {
     margin: 0.5em;
-    position: fixed;
-    bottom: 0.5em;
-    right: 0.5em;
     justify-content: flex-end;
+    @media (min-width: 1060px) {
+      position: fixed;
+      bottom: 0.5em;
+      right: 0.5em;
+    }
   }
   @media (min-width: 1060px) {
     margin-top: 0.5em;
