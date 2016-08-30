@@ -4,6 +4,9 @@ import {pluck, times, update} from 'ramda';
 import axios from 'axios';
 import classNames from 'classnames';
 
+const go = require('../img/splash/vertical/go.png');
+const stop = require('../img/splash/vertical/stop.png');
+
 class Player extends Component {
 
 	constructor(props) {
@@ -133,10 +136,8 @@ class Player extends Component {
 		const playPauseButton = (
 			<div className="player-state-button"
 			     onClick={this.handlePlayPause}>
-				<i className={
-						classNames({'fa fa-play-circle fa-3x': !this.state.isPlaying,
-						'fa fa-pause-circle fa-3x': this.state.isPlaying})}
-				   aria-hidden="true"></i>
+				{ (!this.state.isPlaying) ? <img src={go} alt="play" width={50}/> :
+					<img src={stop} alt="stop" width={50}/>}
 			</div>);
 		const playNextButton = (
 			<div className="player-state-button"

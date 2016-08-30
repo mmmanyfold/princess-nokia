@@ -29,7 +29,9 @@ class Music extends Component {
 						title={ShareTitle}>
 						<FacebookIcon size={IconSize} round/>
 					</FacebookShareButton>
-					<TwitterShareButton title={ShareTitle} url={ShareUrl}>
+					<TwitterShareButton
+						title={ShareTitle}
+						url={ShareUrl}>
 						<TwitterIcon size={IconSize} round/>
 					</TwitterShareButton>
 				</div>
