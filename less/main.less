@@ -9,10 +9,6 @@ body {
   height: 100%;
 }
 
-map area {
-  outline: none;
-}
-
 #mount {
   height: 100%;
 }
@@ -78,7 +74,7 @@ map area {
   }
 }
 
-.splash2 {
+.splash {
   background-color: #fff;
   height: 100%;
   text-align: center;
@@ -96,6 +92,7 @@ map area {
   .flex-row-item {
     width: 33.3%;
   }
+
   .flex-col-item1 {
     width: 100%;
     @media (min-width: 1060px) {
@@ -105,7 +102,7 @@ map area {
   .flex-col-item2 {
     width: 100%;
     @media (min-width: 1060px) {
-      height: 10%;
+      height: 9%;
     }
   }
   .download {
@@ -149,73 +146,7 @@ map area {
       margin: 0 auto;
       display: block;
     }
-    margin-bottom: 6em;
-  }
-}
-
-.splash {
-  overflow: hidden;
-  background-color: white;
-  height: 100%;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  flex-flow:         row nowrap;
-  position: absolute;
-  left:0;
-  top:0;
-  .splash-img {
-    height: 100%;
-    width: auto;
-  }
-  .splash-player {
-    height: 100%;
-  }
-  #splash-car {
-    position: absolute;
-    left:0;
-    bottom: 1%;
-    transition: left 0.125s ease-out;
-  }
-  #lyrics {
-    display: none;
-    height: 100%;
-    width: 585px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin-left: 0.5em;
-    img {
-      width: 100%;
-    }
-  }
-
-  .rocket-container {
-    position: absolute;
-    bottom: 0;
-    #rocket {
-      margin: 0 2em;
-    }
-  }
-
-  .carousel,.carousel-inner,.item,.active {height:100%;}
-  .carousel-inner > .item > img {
-    max-width: none;
-    height: 100%;
-  }
-}
-
-.tour-gallery {
-  height: 100vw;
-  display: -webkit-flex; /* Safari */
-  display: flex;
-  -webkit-flex-flow: column wrap; /* Safari */
-  flex-flow:         column wrap;
-  div {
-    width: 33.3%;
-    padding: 15px;
-  }
-  img {
-    width: 100%;
+    margin-bottom: 8em;
   }
 }
 
@@ -253,7 +184,7 @@ map area {
     padding-left: 0.5em;
   }
   .player-state-button, .player-next-button, .player-previous-button {
-    color: #afcf72;
+    color: #fff;
     padding: 0.5em;
     border-right: 1px #333 solid;
   }
@@ -276,18 +207,17 @@ map area {
   color: #3d41c7;
 }
 
-
 // loading css
 // ***
 
 .loader-container {
   border-right: 1px #333 solid;
-  padding: 0.5em;
+  padding: 0.6em;
 }
 
 .loader {
   margin: 0.7em;
-  font-size: 0.5em;
+  font-size: 0.6em;
   position: relative;
   text-indent: -9999em;
   border-top: 0.4em solid rgba(255, 255, 255, 0.2);
