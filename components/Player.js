@@ -92,7 +92,7 @@ class Player extends Component {
 			current: this.state.current += 1,
 			songs: times(() => false, this.state.count)
 		});
-		let next = this.state.current % this.state.count;
+		let next = Math.abs(this.state.current) % this.state.count;
 		this.shush(next, true, times(() => false, this.state.count));
 	}
 
@@ -129,7 +129,7 @@ class Player extends Component {
 			             onEnd={this.playNext}
 			             onLoad={this.onLoad}/>;
 		}, this.state.count);
-		const currentSong = (this.state.titles[this.state.current] || "").split('.')[0];
+		const currentSong = (this.state.titles[Math.abs(this.state.current)] || "").split('.')[0];
 		const loadingDiv = (<div className="loader-container">
 			<div className="loader"></div>
 		</div>);
