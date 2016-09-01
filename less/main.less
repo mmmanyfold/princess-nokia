@@ -78,13 +78,6 @@ body {
   background-color: #fff;
   height: 100%;
   text-align: center;
-  img.main {
-    width: 100%;
-    @media (min-width: 1060px) {
-      height: 100%;
-      width: auto;
-    }
-  }
   .links {
     position: relative;
     height: 100%;
@@ -92,7 +85,6 @@ body {
   .flex-row-item {
     width: 33.3%;
   }
-
   .flex-col-item1 {
     width: 100%;
     @media (min-width: 1060px) {
@@ -147,6 +139,22 @@ body {
       display: block;
     }
     margin-bottom: 8em;
+  }
+}
+
+.carousel, .carousel-inner, .item {
+  width: 100% !important;
+  @media (min-width: 1060px) {
+    height: 100% !important;
+    width: auto !important;
+  }
+  img {
+    width: 100% !important;
+    @media (min-width: 1060px) {
+      height: 100% !important;
+      width: auto !important;
+      margin: 0 auto !important;
+    }
   }
 }
 

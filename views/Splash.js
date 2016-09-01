@@ -3,8 +3,11 @@ import { Link } from 'react-router'; //react.LINK
 import $ from 'jquery';
 import Music from  './Music';
 import imageMapResize from 'image-map-resizer';
+import {Carousel} from 'react-bootstrap';
 
-const splash = require('../img/splash/vertical/splash.jpg');
+const splash1 = require('../img/splash/vertical/splash1.jpg');
+const splash2 = require('../img/splash/vertical/splash2.jpg');
+const splash3 = require('../img/splash/vertical/splash3.jpg');
 const arrow = require('../img/splash/vertical/arrow.jpg');
 const go = require('../img/splash/vertical/go.png');
 const stop = require('../img/splash/vertical/stop.png');
@@ -31,6 +34,7 @@ class Splash extends Component {
             Arrow: Hovers.Arrow[0]
         };
         this.handleHover = this.handleHover.bind(this);
+
     }
 
     handleHover(type, n) {
@@ -46,7 +50,19 @@ class Splash extends Component {
         <div className="splash">
           <div className="flex-column">
             <div className="flex-col-item1">
-              <img className="main" src={splash}/>
+              <Carousel data-ride="carousel" slide={false} indicators={false} controls={false} interval={500}>
+                <div className="carousel-inner">
+                  <div className="item active">
+                    <img src={splash1}/>
+                  </div>
+                  <div className="item">
+                    <img src={splash2}/>
+                  </div>
+                  <div className="item">
+                    <img src={splash3}/>
+                  </div>
+                </div>
+              </Carousel>
             </div>
             <div className="flex-col-item2">
               <div className="flex-row links">
