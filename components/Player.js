@@ -129,7 +129,8 @@ class Player extends Component {
 			             onEnd={this.playNext}
 			             onLoad={this.onLoad}/>;
 		}, this.state.count);
-		const currentSong = (this.state.titles[Math.abs(this.state.current)] || "").split('.')[0];
+		const title = this.state.titles[Math.abs(this.state.current)] || "";
+		const currentSong = title.substring(0, title.length -4);
 		const loadingDiv = (<div className="loader-container">
 			<div className="loader"></div>
 		</div>);
