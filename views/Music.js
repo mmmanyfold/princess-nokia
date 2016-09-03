@@ -19,11 +19,20 @@ const ShareUrl = 'http://localhost:3000';
 const IconSize = 25;
 
 class Music extends Component {
+	handleBookletClick() {
+		window.open('/1992-booklet.html','_blank','resizable,height=600,width=800');
+	}
 	render() {
 		return (
 			<div className="music-view">
 				<Player/>
 				<div className="social-share-container flex-row">
+					<div>
+						<a href="#"
+						   onClick={this.handleBookletClick}>
+							<span className="booklet-link">BOOKLET</span>
+						</a>
+					</div>
 					<FacebookShareButton
 						url={ShareUrl}
 						title={ShareTitle}>
