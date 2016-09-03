@@ -22,6 +22,20 @@ const mine = require('../img/splash/lyrics-mine.png');
 const excellent = require('../img/splash/lyrics-excellent.png');
 const bart = require('../img/splash/lyrics-bart.png');
 
+const booklet1 = require('../img/splash/1992__albumcover.jpg');
+const booklet2 = require('../img/splash/1992__tracklist.jpg');
+const booklet3 = require('../img/splash/1992_a.jpg');
+const booklet4 = require('../img/splash/1992_b.jpg');
+const booklet5 = require('../img/splash/1992_c.jpg');
+const booklet6 = require('../img/splash/1992_d.jpg');
+const booklet7 = require('../img/splash/1992_e.jpg');
+const booklet8 = require('../img/splash/1992_f.jpg');
+const booklet9 = require('../img/splash/1992_g.jpg');
+const booklet10 = require('../img/splash/1992_h.jpg');
+const booklet11 = require('../img/splash/1992_i.jpg');
+const booklet12 = require('../img/splash/1992_j.jpg');
+const booklet13 = require('../img/splash/1992_k.jpg');
+
 const Hovers = {
   Arrow: [download]
 };
@@ -85,6 +99,7 @@ class Splash extends Component {
           </div>
           <Music/>
           <div id="lyrics">
+            <img src={bart}/>
             <img src={tomboy}/>
             <img src={kitana}/>
             <img src={bruja}/>
@@ -92,7 +107,6 @@ class Splash extends Component {
             <img src={green}/>
             <img src={mine}/>
             <img src={excellent}/>
-            <img src={bart}/>
           </div>
         </div>);
     }
