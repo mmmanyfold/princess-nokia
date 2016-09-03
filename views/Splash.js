@@ -64,18 +64,16 @@ class Splash extends Component {
         <div className="splash">
           <div className="flex-column">
             <div className="flex-col-item1">
-              <Carousel data-ride="carousel" slide={false} indicators={false} controls={false} interval={500}>
-                <div className="carousel-inner">
-                  <div className="item active">
+              <Carousel data-ride="carousel" slide={false} indicators={false} controls={false} interval={2000}>
+                  <Carousel.Item>
                     <img src={splash1}/>
-                  </div>
-                  <div className="item">
+                  </Carousel.Item>
+                  <Carousel.Item>
                     <img src={splash2}/>
-                  </div>
-                  <div className="item">
+                  </Carousel.Item>
+                  <Carousel.Item>
                     <img src={splash3}/>
-                  </div>
-                </div>
+                  </Carousel.Item>
               </Carousel>
             </div>
             <div className="flex-col-item2">
@@ -98,6 +96,49 @@ class Splash extends Component {
             </div>
           </div>
           <Music/>
+          <div id="booklet">
+            <Carousel data-ride="carousel" slide={true} indicators={true} controls={true} interval={10000}>
+                <Carousel.Item>
+                  <img src={booklet1}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet2}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet3}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet4}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet5}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet6}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet7}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet8}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet9}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet10}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet11}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet12}/>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img src={booklet13}/>
+                </Carousel.Item>
+            </Carousel>
+          </div>
           <div id="lyrics">
             <img src={bart}/>
             <img src={tomboy}/>
