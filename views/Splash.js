@@ -68,7 +68,7 @@ class Splash extends Component {
                   <span>scroll for lyrics</span>
                 </div>
                 <div className="flex-row-item download">
-                  <a className="hvr-icon-down" href="https://s3.amazonaws.com/princess-nokia/album.zip">
+                  <a className="hvr-icon-down" href="https://s3.amazonaws.com/princess-nokia/PrincessNokia1992.zip">
                     <span>Download Album</span>
                   </a>
                 </div>
