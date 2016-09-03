@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Oswald';
+
 html {
   height: 100%;
 }
@@ -28,7 +30,7 @@ body {
   margin-top: auto;
   align-items: center;
   @media (min-width: 1060px) {
-    height: 91%;
+    height: 88%;
   }
 }
 
@@ -77,6 +79,7 @@ body {
   background-color: #fff;
   height: 100%;
   text-align: center;
+  font-family: 'Oswald';
   .carousel, .carousel-inner, .item {
     width: 100% !important;
     @media (min-width: 1060px) {
@@ -114,13 +117,13 @@ body {
   .download {
     font-size: 1.5em;
     a {
-      font-weight: bold;
+      color: #ae0e30;
     }
     a:hover {
       text-decoration: none;
     }
     span {
-      padding-right: 0.5em;
+      padding-right: 0.1em;
       padding-left: 1em;
     }
   }
@@ -147,22 +150,6 @@ body {
       }
     }
   }
-  #booklet {
-    margin-top: 3em;
-    border-top: 10px solid #ff5454;
-    width: 100%;
-    background: #fff url('../img/city1.jpg') top center;
-    .carousel {
-      width: 100% !important;
-      .carousel-inner {
-        margin: 0 auto !important;
-        width: 33% !important;
-        .item, img {
-          width: 100% !important;
-        }
-      }
-    }
-  }
   #lyrics {
     background: #fff url('../img/splash/map.jpg') repeat top center;
     width: 100%;
@@ -185,6 +172,7 @@ body {
     color: white;
   }
   .booklet-link {
+    font-size: 1.2em;
     margin-right: 1em;
     padding: 0.3em 0.5em;
     border: solid 1px white;
@@ -202,7 +190,7 @@ body {
     justify-content: flex-end;
     @media (min-width: 1060px) {
       position: fixed;
-      bottom: 0.5em;
+      bottom: 1em;
       right: 0.5em;
     }
   }
