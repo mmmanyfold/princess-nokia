@@ -14,8 +14,8 @@ const {
 const FacebookIcon = generateShareIcon('facebook');
 const TwitterIcon = generateShareIcon('twitter');
 
-const ShareTitle = 'Listen to xyz...';
-const ShareUrl = 'http://localhost:3000';
+const ShareTitle = 'Princess Nokia | 1992';
+const ShareUrl = 'http://dev.princessnokia.org';
 const IconSize = 25;
 
 class Music extends Component {
