@@ -30,7 +30,7 @@ class Music extends Component {
 					<div>
 						<a href="#"
 						   onClick={this.handleBookletClick}>
-							booklet
+							<span className="booklet-link">BOOKLET</span>
 						</a>
 					</div>
 					<FacebookShareButton
