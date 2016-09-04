@@ -4,8 +4,8 @@ import {pluck, times, update} from 'ramda';
 import axios from 'axios';
 import classNames from 'classnames';
 
-const go = require('../img/splash/vertical/go.png');
-const stop = require('../img/splash/vertical/stop.png');
+const go = require('../img/splash-1992/vertical/go.png');
+const stop = require('../img/splash-1992/vertical/stop.png');
 
 class Player extends Component {
 

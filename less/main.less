@@ -29,9 +29,7 @@ body {
   flex-flow:         column nowrap;
   margin-top: auto;
   align-items: center;
-  @media (min-width: 1060px) {
-    height: 88%;
-  }
+  height: 88%;
 }
 
 .nav li a {
@@ -81,18 +79,13 @@ body {
   text-align: center;
   font-family: 'Archivo Narrow';
   .carousel, .carousel-inner, .item {
-    width: 100% !important;
-    @media (min-width: 1060px) {
+    height: 100% !important;
+    width: auto !important;
+    img {
       height: 100% !important;
       width: auto !important;
-    }
-    img {
-      width: 100% !important;
-      @media (min-width: 1060px) {
-        height: 100% !important;
-        width: auto !important;
-        margin: 0 auto !important;
-      }
+      margin: 0 auto !important;
+      cursor: pointer;
     }
   }
   .links {
@@ -103,16 +96,11 @@ body {
     width: 33.3%;
   }
   .flex-col-item1 {
-    width: 100%;
-    @media (min-width: 1060px) {
-      height: 90%;
-    }
+    height: 90%;
   }
   .flex-col-item2 {
     width: 100%;
-    @media (min-width: 1060px) {
-      height: 10%;
-    }
+    height: 10%;
   }
   .download {
     font-size: 1.5em;
@@ -151,7 +139,7 @@ body {
     }
   }
   #lyrics {
-    background: #fff url('../img/splash/map.jpg') repeat top center;
+    background: #fff url('../img/splash-1992/map.jpg') repeat top center;
     width: 100%;
     img {
       width: 585px;
@@ -189,17 +177,13 @@ body {
     width: 400px;
     margin: 0.5em;
     justify-content: flex-end;
-    @media (min-width: 1060px) {
-      position: fixed;
-      bottom: 1em;
-      right: 0.5em;
-    }
-  }
-  @media (min-width: 1060px) {
-    margin-top: 0.5em;
     position: fixed;
-    bottom: 0;
+    bottom: 1em;
+    right: 0.5em;
   }
+  margin-top: 0.5em;
+  position: fixed;
+  bottom: 0;
 }
 
 .Player {

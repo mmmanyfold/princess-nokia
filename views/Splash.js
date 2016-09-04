@@ -4,19 +4,33 @@ import Music from  './Music';
 import imageMapResize from 'image-map-resizer';
 import {Carousel} from 'react-bootstrap';
 
-const splash1 = require('../img/splash/vertical/splash1.jpg');
-const splash2 = require('../img/splash/vertical/splash2.jpg');
-const splash3 = require('../img/splash/vertical/splash3.jpg');
-const arrow = require('../img/splash/vertical/arrow.jpg');
+const splash1 = require('../img/splash-1992/vertical/splash1.jpg');
+const splash2 = require('../img/splash-1992/vertical/splash2.jpg');
+const splash3 = require('../img/splash-1992/vertical/splash3.jpg');
+const arrow = require('../img/splash-1992/vertical/arrow.jpg');
 
-const tomboy = require('../img/splash/lyrics-tomboy.png');
-const kitana = require('../img/splash/lyrics-kitana.png');
-const bruja = require('../img/splash/lyrics-bruja.png');
-const saggy = require('../img/splash/lyrics-saggy.png');
-const green = require('../img/splash/lyrics-greenline.png');
-const mine = require('../img/splash/lyrics-mine.png');
-const excellent = require('../img/splash/lyrics-excellent.png');
-const bart = require('../img/splash/lyrics-bart.png');
+const tomboy = require('../img/splash-1992/lyrics-tomboy.png');
+const kitana = require('../img/splash-1992/lyrics-kitana.png');
+const bruja = require('../img/splash-1992/lyrics-bruja.png');
+const saggy = require('../img/splash-1992/lyrics-saggy.png');
+const green = require('../img/splash-1992/lyrics-greenline.png');
+const mine = require('../img/splash-1992/lyrics-mine.png');
+const excellent = require('../img/splash-1992/lyrics-excellent.png');
+const bart = require('../img/splash-1992/lyrics-bart.png');
+
+const booklet1 = require('../img/splash-1992/1992__albumcover.jpg');
+const booklet2 = require('../img/splash-1992/1992__tracklist.jpg');
+const booklet3 = require('../img/splash-1992/1992_a.jpg');
+const booklet4 = require('../img/splash-1992/1992_b.jpg');
+const booklet5 = require('../img/splash-1992/1992_c.jpg');
+const booklet6 = require('../img/splash-1992/1992_d.jpg');
+const booklet7 = require('../img/splash-1992/1992_e.jpg');
+const booklet8 = require('../img/splash-1992/1992_f.jpg');
+const booklet9 = require('../img/splash-1992/1992_g.jpg');
+const booklet10 = require('../img/splash-1992/1992_h.jpg');
+const booklet11 = require('../img/splash-1992/1992_i.jpg');
+const booklet12 = require('../img/splash-1992/1992_j.jpg');
+const booklet13 = require('../img/splash-1992/1992_k.jpg');
 
 const Hovers = {
   Arrow: [arrow]
@@ -34,11 +48,12 @@ class Splash extends Component {
     }
 
     handleHover(type, n) {
-        this.setState({[type]: Hovers[type][n]});
+      this.setState({[type]: Hovers[type][n]});
     }
 
-    componentDidMount() {
-        imageMapResize();
+    handleCarouselClick() {
+      $(".carousel").carousel('next');
+      $(".carousel").carousel('pause');
     }
 
     render() {
@@ -46,17 +61,52 @@ class Splash extends Component {
         <div className="splash">
           <div className="flex-column">
             <div className="flex-col-item1">
-              <Carousel data-ride="carousel" slide={false} indicators={false} controls={false} interval={2000}>
-                  <Carousel.Item>
-                    <img src={splash1}/>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img src={splash2}/>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img src={splash3}/>
-                  </Carousel.Item>
-              </Carousel>
+                <Carousel id="booklet-carousel"
+                  slide={true}
+                  indicators={false}
+                  controls={false}
+                  interval={60000}
+                  onClick={this.handleCarouselClick}>
+                    <Carousel.Item>
+                      <img src={booklet1}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet2}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet3}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet4}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet5}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet6}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet7}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet8}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet9}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet10}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet11}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet12}/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <img src={booklet13}/>
+                    </Carousel.Item>
+                </Carousel>
             </div>
             <div className="flex-col-item2">
               <div className="flex-row links">
