@@ -17,6 +17,7 @@ class Player extends Component {
 			titles: [],
 			current: 0,
 			isPlaying: false,
+			manyLoaded: 0,
 			loading: true
 		}
 		this.shush = this.shush.bind(this);
@@ -97,9 +98,15 @@ class Player extends Component {
 	}
 
 	onLoad() {
+		const thisMany = this.state.manyLoaded + 1;
 		this.setState({
-			loading: false
+			manyLoaded: thisMany
 		});
+		if (this.state.manyLoaded === this.state.songs.length) {
+			this.setState({
+				loading: false
+			});
+		}
 	}
 
 	componentWillMount() {
@@ -130,7 +137,7 @@ class Player extends Component {
 			             onLoad={this.onLoad}/>;
 		}, this.state.count);
 		const title = this.state.titles[Math.abs(this.state.current)] || "";
-		const currentSong = title.substring(0, title.length -4);
+		const currentSong = title.substring(0, title.length - 4);
 		const loadingDiv = (<div className="loader-container">
 			<div className="loader"></div>
 		</div>);
