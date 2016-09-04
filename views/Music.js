@@ -27,12 +27,6 @@ class Music extends Component {
 			<div className="music-view">
 				<Player/>
 				<div className="social-share-container flex-row">
-					<div>
-						<a href="#"
-						   onClick={this.handleBookletClick}>
-							<span className="booklet-link">BOOKLET</span>
-						</a>
-					</div>
 					<FacebookShareButton
 						url={ShareUrl}
 						title={ShareTitle}>

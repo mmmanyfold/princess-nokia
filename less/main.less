@@ -1,13 +1,12 @@
 @import 'https://fonts.googleapis.com/css?family=Archivo+Narrow';
 
-html {
+html, body {
   height: 100%;
 }
 body {
   margin: auto;
   color: blue;
   -webkit-font-smoothing: antialiased;
-  height: 100%;
 }
 
 #mount {
@@ -29,7 +28,6 @@ body {
   flex-flow:         column nowrap;
   margin-top: auto;
   align-items: center;
-  height: 88%;
 }
 
 .nav li a {
@@ -84,7 +82,9 @@ body {
     width: 100%;
     top: 25%;
     img {
-      width: 65%;
+      @media (orientation: portrait) {
+        width: 65%;
+      }
     }
   }
   .fadeInDownOut {
@@ -119,16 +119,28 @@ body {
   .links {
     position: relative;
     height: 100%;
+    flex-wrap: wrap;
+  }
+  .main {
+    height: 90%;
+    @media (orientation: portrait) {
+      height: 85%;
+    }
   }
   .flex-row-item {
     width: 33.3%;
+    align-self: center;
+    @media (orientation: portrait) {
+      width:100%;
+    }
   }
   .flex-col-item1 {
-    height: 90%;
+    height: 92%;
   }
   .flex-col-item2 {
     width: 100%;
-    height: 10%;
+    height: 8%;
+    margin-top: 5px;
   }
   .download {
     font-size: 1.5em;
@@ -141,9 +153,12 @@ body {
     span {
       padding-right: 0.1em;
       padding-left: 1em;
+      @media (orientation: portrait) {
+        padding: 0;
+      }
     }
   }
-  .down {
+  .scrolldown {
     text-align: left;
     align-self: flex-end;
     color: gray;
@@ -152,18 +167,21 @@ body {
     span {
       margin: 0 0.5em;
     }
+    @media (orientation: portrait) {
+      text-align: center;
+      padding: 0 0.5em 0.5em 0.5em;
+      order: 2;
+    }
   }
   .arrow {
     text-align: right;
-    @media (min-width: 1060px) {
-      height: 100%;
-    }
+    height: 100%;
     img {
-      width: 50%;
-      @media (min-width: 1060px) {
-        height: 100%;
-        width: auto;
-      }
+      height: 100%;
+      width: auto;
+    }
+    @media (orientation: portrait) {
+      display: none;
     }
   }
   #lyrics {
@@ -176,6 +194,7 @@ body {
     }
     padding: 0 0 8em 0;
     margin-top: 3em;
+    overflow-x: scroll;
   }
 }
 
@@ -232,16 +251,6 @@ body {
     }
     color: white;
   }
-  .booklet-link {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-right: 1em;
-    padding: 0.3em 0.5em;
-    border: solid 1px white;
-    &:hover {
-      background-color: white;
-    }
-  }
   z-index: 100;
   width: 100%;
   color: black;
@@ -253,8 +262,10 @@ body {
     position: fixed;
     bottom: 1em;
     right: 0.5em;
+    @media (orientation: portrait) {
+      display: none;
+    }
   }
-  margin-top: 0.5em;
   position: fixed;
   bottom: 0;
 }
@@ -388,6 +399,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   padding-right: 2.2em;
+  @media (orientation: portrait) {
+    padding: 0;
+  }
 }
 .hvr-icon-down:before {
   content: "\f063";
@@ -397,6 +411,9 @@ body {
   font-family: FontAwesome;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  @media (orientation: portrait) {
+    display: none;
+  }
 }
 .hvr-icon-down:hover:before, .hvr-icon-down:focus:before, .hvr-icon-down:active:before {
   -webkit-animation-name: hvr-icon-down;
@@ -405,4 +422,7 @@ body {
   animation-duration: 0.75s;
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
+  @media (orientation: portrait) {
+    display: none;
+  }
 }

@@ -65,7 +65,7 @@ class Splash extends Component {
               <img src={logo}/>
             </div>
           </div>
-          <div className="flex-column">
+          <div className="flex-column main">
             <div className="flex-col-item1 fadeIn">
                 <Carousel id="booklet-carousel"
                   slide={true}
@@ -116,7 +116,7 @@ class Splash extends Component {
             </div>
             <div className="flex-col-item2 fadeIn">
               <div className="flex-row links">
-                <div className="flex-row-item down">
+                <div className="flex-row-item scrolldown">
                   <i className="fa fa-angle-double-down" aria-hidden="true"></i>
                   <span>scroll for lyrics</span>
                 </div>
