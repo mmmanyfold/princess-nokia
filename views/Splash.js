@@ -8,6 +8,7 @@ const splash1 = require('../img/splash-1992/vertical/splash1.jpg');
 const splash2 = require('../img/splash-1992/vertical/splash2.jpg');
 const splash3 = require('../img/splash-1992/vertical/splash3.jpg');
 const arrow = require('../img/splash-1992/vertical/arrow.jpg');
+const logo = require('../img/splash-1992/logo.jpg');
 
 const tomboy = require('../img/splash-1992/lyrics-tomboy.png');
 const kitana = require('../img/splash-1992/lyrics-kitana.png');
@@ -59,8 +60,13 @@ class Splash extends Component {
     render() {
         return (
         <div className="splash">
+          <div className="logo-box fadeOut">
+            <div className="logo fadeInDownOut">
+              <img src={logo}/>
+            </div>
+          </div>
           <div className="flex-column">
-            <div className="flex-col-item1">
+            <div className="flex-col-item1 fadeIn">
                 <Carousel id="booklet-carousel"
                   slide={true}
                   indicators={false}
@@ -108,7 +114,7 @@ class Splash extends Component {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <div className="flex-col-item2">
+            <div className="flex-col-item2 fadeIn">
               <div className="flex-row links">
                 <div className="flex-row-item down">
                   <i className="fa fa-angle-double-down" aria-hidden="true"></i>
