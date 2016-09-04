@@ -1,13 +1,12 @@
 @import 'https://fonts.googleapis.com/css?family=Archivo+Narrow';
 
-html {
+html, body {
   height: 100%;
 }
 body {
   margin: auto;
   color: blue;
   -webkit-font-smoothing: antialiased;
-  height: 100%;
 }
 
 #mount {
@@ -29,7 +28,6 @@ body {
   flex-flow:         column nowrap;
   margin-top: auto;
   align-items: center;
-  height: 88%;
 }
 
 .nav li a {
@@ -84,7 +82,9 @@ body {
     width: 100%;
     top: 25%;
     img {
-      width: 65%;
+      @media (orientation: portrait) {
+        width: 65%;
+      }
     }
   }
   .fadeInDownOut {
@@ -120,18 +120,23 @@ body {
     position: relative;
     height: 100%;
   }
+  .main {
+    height: 90%;
+  }
   .flex-row-item {
     width: 33.3%;
+    align-self: center;
   }
   .flex-col-item1 {
-    height: 90%;
+    height: 92%;
   }
   .flex-col-item2 {
     width: 100%;
-    height: 10%;
+    height: 8%;
+    margin-top: 5px;
   }
   .download {
-    font-size: 1.5em;
+    font-size: 2em;
     a {
       color: #ae0e30;
     }
@@ -143,7 +148,7 @@ body {
       padding-left: 1em;
     }
   }
-  .down {
+  .scrolldown {
     text-align: left;
     align-self: flex-end;
     color: gray;
@@ -155,15 +160,10 @@ body {
   }
   .arrow {
     text-align: right;
-    @media (min-width: 1060px) {
-      height: 100%;
-    }
+    height: 100%;
     img {
-      width: 50%;
-      @media (min-width: 1060px) {
-        height: 100%;
-        width: auto;
-      }
+      height: 100%;
+      width: auto;
     }
   }
   #lyrics {
@@ -176,6 +176,7 @@ body {
     }
     padding: 0 0 8em 0;
     margin-top: 3em;
+    overflow-x: scroll;
   }
 }
 
