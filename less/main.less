@@ -119,13 +119,20 @@ body {
   .links {
     position: relative;
     height: 100%;
+    flex-wrap: wrap;
   }
   .main {
     height: 90%;
+    @media (orientation: portrait) {
+      height: 85%;
+    }
   }
   .flex-row-item {
     width: 33.3%;
     align-self: center;
+    @media (orientation: portrait) {
+      width:100%;
+    }
   }
   .flex-col-item1 {
     height: 92%;
@@ -136,7 +143,7 @@ body {
     margin-top: 5px;
   }
   .download {
-    font-size: 2em;
+    font-size: 1.5em;
     a {
       color: #ae0e30;
     }
@@ -146,6 +153,9 @@ body {
     span {
       padding-right: 0.1em;
       padding-left: 1em;
+      @media (orientation: portrait) {
+        padding: 0;
+      }
     }
   }
   .scrolldown {
@@ -157,6 +167,11 @@ body {
     span {
       margin: 0 0.5em;
     }
+    @media (orientation: portrait) {
+      text-align: center;
+      padding: 0 0.5em 0.5em 0.5em;
+      order: 2;
+    }
   }
   .arrow {
     text-align: right;
@@ -164,6 +179,9 @@ body {
     img {
       height: 100%;
       width: auto;
+    }
+    @media (orientation: portrait) {
+      display: none;
     }
   }
   #lyrics {
@@ -233,16 +251,6 @@ body {
     }
     color: white;
   }
-  .booklet-link {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-right: 1em;
-    padding: 0.3em 0.5em;
-    border: solid 1px white;
-    &:hover {
-      background-color: white;
-    }
-  }
   z-index: 100;
   width: 100%;
   color: black;
@@ -254,8 +262,10 @@ body {
     position: fixed;
     bottom: 1em;
     right: 0.5em;
+    @media (orientation: portrait) {
+      display: none;
+    }
   }
-  margin-top: 0.5em;
   position: fixed;
   bottom: 0;
 }
@@ -389,6 +399,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   padding-right: 2.2em;
+  @media (orientation: portrait) {
+    padding: 0;
+  }
 }
 .hvr-icon-down:before {
   content: "\f063";
@@ -398,6 +411,9 @@ body {
   font-family: FontAwesome;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  @media (orientation: portrait) {
+    display: none;
+  }
 }
 .hvr-icon-down:hover:before, .hvr-icon-down:focus:before, .hvr-icon-down:active:before {
   -webkit-animation-name: hvr-icon-down;
@@ -406,4 +422,7 @@ body {
   animation-duration: 0.75s;
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
+  @media (orientation: portrait) {
+    display: none;
+  }
 }
