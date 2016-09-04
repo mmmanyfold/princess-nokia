@@ -29,7 +29,7 @@
 </head>
 <body>
 <div id="booklet">
-    <div id="booket-carousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+    <div id="booket-carousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#booket-carousel" data-slide-to="0" class="active"></li>
@@ -103,7 +103,7 @@
     var h = $(window).height();
     var w = h * (2/3);
     $('.carousel-inner').width(w);
-    $('.carousel').carousel();
+    $('.carousel').carousel({interval: 7000});
 </script>
 </body>
 </html>
