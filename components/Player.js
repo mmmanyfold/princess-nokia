@@ -79,22 +79,25 @@ class Player extends Component {
 	}
 
 	handlePlayPrevious() {
-		this.setState({
-			current: this.state.current -= 1,
-			songs: times(() => false, this.state.count)
-		});
-		let next = this.state.current % this.state.count;
-		this.shush(next, true, times(() => false, this.state.count))
-
+		if (!this.state.loading) {
+			this.setState({
+				current: this.state.current -= 1,
+				songs: times(() => false, this.state.count)
+			});
+			let next = this.state.current % this.state.count;
+			this.shush(next, true, times(() => false, this.state.count))
+		}
 	}
 
 	handlePlayNext() {
-		this.setState({
-			current: this.state.current += 1,
-			songs: times(() => false, this.state.count)
-		});
-		let next = Math.abs(this.state.current) % this.state.count;
-		this.shush(next, true, times(() => false, this.state.count));
+		if (!this.state.loading) {
+			this.setState({
+				current: this.state.current += 1,
+				songs: times(() => false, this.state.count)
+			});
+			let next = Math.abs(this.state.current) % this.state.count;
+			this.shush(next, true, times(() => false, this.state.count));
+		}
 	}
 
 	onLoad() {
@@ -148,12 +151,14 @@ class Player extends Component {
 					<img src={stop} alt="stop" width={50}/>}
 			</div>);
 		const playNextButton = (
-			<div className="player-state-button"
+			<div className={classNames('player-state-button',
+				{'disabled-btn': this.state.loading})}
 			     onClick={this.handlePlayNext}>
 				<i className="fa fa-step-forward fa-3x" aria-hidden="true"></i>
 			</div>);
 		const playPreviousButton = (
-			<div className="player-state-button"
+			<div className={classNames('player-state-button',
+				{'disabled-btn': this.state.loading})}
 			     onClick={this.handlePlayPrevious}>
 				<i className="fa fa-step-backward fa-3x" aria-hidden="true"></i>
 			</div>);
