@@ -8,9 +8,6 @@ const splash1 = require('../img/splash/vertical/splash1.jpg');
 const splash2 = require('../img/splash/vertical/splash2.jpg');
 const splash3 = require('../img/splash/vertical/splash3.jpg');
 const arrow = require('../img/splash/vertical/arrow.jpg');
-const go = require('../img/splash/vertical/go.png');
-const stop = require('../img/splash/vertical/stop.png');
-const download = require('../img/splash/vertical/download.jpg');
 
 const tomboy = require('../img/splash/lyrics-tomboy.png');
 const kitana = require('../img/splash/lyrics-kitana.png');
@@ -22,7 +19,7 @@ const excellent = require('../img/splash/lyrics-excellent.png');
 const bart = require('../img/splash/lyrics-bart.png');
 
 const Hovers = {
-  Arrow: [download]
+  Arrow: [arrow]
 };
 
 class Splash extends Component {
@@ -69,7 +66,7 @@ class Splash extends Component {
                 </div>
                 <div className="flex-row-item download">
                   <a className="hvr-icon-down" href="https://s3.amazonaws.com/princess-nokia/PrincessNokia1992.zip">
-                    <span>Download Album</span>
+                    <span>Download 1992</span>
                   </a>
                 </div>
                 <div className="flex-row-item arrow">
