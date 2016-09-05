@@ -122,7 +122,7 @@ class Splash extends Component {
                 </div>
                 <div className="flex-row-item download">
                   <a className="hvr-icon-down" href="https://s3.amazonaws.com/princess-nokia/PrincessNokia1992.zip">
-                    <span>DOWNLOAD 1992</span>
+                    <span>Download 1992</span>
                   </a>
                 </div>
                 <div className="flex-row-item arrow">

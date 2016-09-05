@@ -123,7 +123,7 @@ body {
   }
   .main {
     height: 91%;
-    background: #fff url('../img/city1.jpg') repeat top center;
+    background: #fff url('../img/city1white.jpg') repeat top center;
     @media (orientation: portrait) {
       height: 86%;
     }
@@ -137,6 +137,7 @@ body {
   }
   .flex-col-item1 {
     height: 92%;
+    margin-bottom: -5px;
   }
   .flex-col-item2 {
     width: 100%;
@@ -145,23 +146,15 @@ body {
     background-color: white;
   }
   .download {
-    font-size: 1.5em;
+    font-size: 1.8em;
     a {
       color: #ae0e30;
       text-decoration: none;
-      font-weight: bold;
-      &:hover {
-        font-weight: bold;
-      }
-      @media (orientation: portrait) {
-        text-decoration: underline;
-      }
     }
     span {
-      padding-right: 0.1em;
       padding-left: 1em;
-      @media (orientation: portrait) {
-        padding: 0;
+      &:hover {
+        font-weight: bold;
       }
     }
   }
@@ -199,6 +192,7 @@ body {
       margin: 0 auto;
       display: block;
     }
+    border-top: 1px solid gray;
     padding: 0 0 8em 0;
     margin-top: 3em;
     overflow-x: scroll;
@@ -283,7 +277,6 @@ body {
 .Player {
   text-align: left;
   width: 100%;
-  border: 1px black solid;
   .current {
     color: white;
     background-color: #1a1a1a;
@@ -314,11 +307,6 @@ body {
   .fa {
     margin: 0.5em;
   }
-}
-
-.active-song-row {
-  font-weight: bold;
-  color: #3d41c7;
 }
 
 // loading css
@@ -414,21 +402,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   padding-right: 2.2em;
-  @media (orientation: portrait) {
-    padding: 0;
-  }
 }
 .hvr-icon-down:before {
-  content: "\f063";
+  content: "\f01a";
   position: absolute;
   right: 1em;
   padding: 2px 1px 0 1px;
   font-family: FontAwesome;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  @media (orientation: portrait) {
-    display: none;
-  }
 }
 .hvr-icon-down:hover:before, .hvr-icon-down:focus:before, .hvr-icon-down:active:before {
   -webkit-animation-name: hvr-icon-down;
@@ -437,9 +419,6 @@ body {
   animation-duration: 0.75s;
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
-  @media (orientation: portrait) {
-    display: none;
-  }
 }
 
 // disabled class for prev next btns
