@@ -57,9 +57,15 @@ class Splash extends Component {
       $(".carousel").carousel('pause');
     }
 
+    handleArrowClick() {
+      alert("Full site coming soon :)");
+    }
+
     render() {
         return (
         <div className="splash">
+          <div className="whiteout fadeOut">
+          </div>
           <div className="logo-box fadeOut">
             <div className="logo fadeInDownOut">
               <img src={logo}/>
@@ -126,7 +132,7 @@ class Splash extends Component {
                   </a>
                 </div>
                 <div className="flex-row-item arrow">
-                  <a href="/site">
+                  <a href="#" onClick={this.handleArrowClick}>
                     <img src={arrow}/>
                   </a>
                 </div>

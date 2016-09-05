@@ -75,6 +75,12 @@ body {
   height: 100%;
   text-align: center;
   font-family: 'Archivo Narrow';
+  .whiteout {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+  }
   .logo-box {
     position: absolute;
     text-align: center;
@@ -284,12 +290,13 @@ body {
   .current-title {
     padding-left: 1em;
   }
-  .player-state-button, .player-next-button, .player-previous-button {
+  .player-state-button {
     color: #fff;
     padding: 0.2em 0.5em;
     height: 54px;
     border-right: 1px #333 solid;
     align-self: center;
+    cursor: pointer;
     img {
       height: 100%;
       width: auto;
@@ -407,7 +414,7 @@ body {
   content: "\f01a";
   position: absolute;
   right: 1em;
-  padding: 2px 1px 0 1px;
+  padding: 1px 1px 0 1px;
   font-family: FontAwesome;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
