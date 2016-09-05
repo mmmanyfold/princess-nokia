@@ -8,7 +8,7 @@ const splash1 = require('../img/splash-1992/vertical/splash1.jpg');
 const splash2 = require('../img/splash-1992/vertical/splash2.jpg');
 const splash3 = require('../img/splash-1992/vertical/splash3.jpg');
 const arrow = require('../img/splash-1992/vertical/arrow.jpg');
-const logo = require('../img/splash-1992/logo.jpg');
+const logo = require('../img/splash-1992/logo.png');
 
 const tomboy = require('../img/splash-1992/lyrics-tomboy.png');
 const kitana = require('../img/splash-1992/lyrics-kitana.png');
