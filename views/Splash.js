@@ -61,6 +61,14 @@ class Splash extends Component {
       alert("Full site coming soon :)");
     }
 
+    handleDownloadClicks(event) {
+      ga('send', 'event', {
+        eventCategory: 'Download Link',
+        eventAction: 'click',
+        eventLabel: event.target.href
+      });
+    }
+
     render() {
         return (
         <div className="splash">
@@ -127,7 +135,7 @@ class Splash extends Component {
                   <span>scroll for lyrics</span>
                 </div>
                 <div className="flex-row-item download">
-                  <a className="hvr-icon-down" href="https://s3.amazonaws.com/princess-nokia/PrincessNokia1992.zip">
+                  <a className="hvr-icon-down" onClick={this.handleDownloadClicks} href="https://s3.amazonaws.com/princess-nokia/PrincessNokia1992.zip">
                     <span>Download 1992</span>
                   </a>
                 </div>
