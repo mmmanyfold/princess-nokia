@@ -145,7 +145,7 @@ class Player extends Component {
 			<div className="loader"></div>
 		</div>);
 		const playPauseButton = (
-			<div className="player-state-button"
+			<div className="player-state-button flex-row"
 			     onClick={this.handlePlayPause}>
 				{ (!this.state.isPlaying) ? <img src={go} alt="play" width={50}/> :
 					<img src={stop} alt="stop" width={50}/>}
