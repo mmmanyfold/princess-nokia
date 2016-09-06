@@ -24,8 +24,10 @@ class Music extends Component {
 		return (
 			<div className="music-view">
 				{this.props.isMobile ?
-					<div className="Player">
-						<a href="https://soundcloud.com/destiny-frasqueri/sets/1992a">Listen on SoundCloud</a>
+					<div className="Soundcloud flex-row">
+						<div>
+							<a target="_blank" href="https://soundcloud.com/destiny-frasqueri/sets/1992a">Listen on SoundCloud</a>
+						</div>
 					</div>
 					:
 					<Player/>

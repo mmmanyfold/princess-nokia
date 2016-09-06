@@ -58,7 +58,7 @@ class Splash extends Component {
             },
 	        unmatch: () => {
 		        this.setState({
-			        isMobile: true
+			        isMobile: false
 		        });
 	        }
         });
