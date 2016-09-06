@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router'; //react.LINK
 import Music from  './Music';
-import imageMapResize from 'image-map-resizer';
 import {Carousel} from 'react-bootstrap';
+import enquire from 'enquire.js';
 
 const splash1 = require('../img/splash-1992/vertical/splash1.jpg');
 const splash2 = require('../img/splash-1992/vertical/splash2.jpg');
@@ -39,13 +39,29 @@ const Hovers = {
 
 class Splash extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            Arrow: Hovers.Arrow[0]
+            Arrow: Hovers.Arrow[0],
+	        isMobile: false
         };
         this.handleHover = this.handleHover.bind(this);
 
+    }
+
+    componentWillMount() {
+        enquire.register('screen and (max-width:768px)', {
+            match: () => {
+	            this.setState({
+		            isMobile: true
+	            });
+            },
+	        unmatch: () => {
+		        this.setState({
+			        isMobile: true
+		        });
+	        }
+        });
     }
 
     handleHover(type, n) {
@@ -147,7 +163,7 @@ class Splash extends Component {
               </div>
             </div>
           </div>
-          <Music/>
+          <Music isMobile={this.state.isMobile}/>
           <div id="lyrics">
             <img src={bart}/>
             <img src={tomboy}/>

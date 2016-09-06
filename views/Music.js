@@ -19,13 +19,17 @@ const ShareUrl = 'http://princessnokia.org';
 const IconSize = 25;
 
 class Music extends Component {
-	handleBookletClick() {
-		window.open('/1992-booklet.html','_blank','resizable,height=600,width=800');
-	}
+
 	render() {
 		return (
 			<div className="music-view">
-				<Player/>
+				{this.props.isMobile ?
+					<div className="Player">
+						<a href="https://soundcloud.com/destiny-frasqueri/sets/1992a">Listen on SoundCloud</a>
+					</div>
+					:
+					<Player/>
+				}
 				<div className="social-share-container flex-row">
 					<FacebookShareButton
 						url={ShareUrl}

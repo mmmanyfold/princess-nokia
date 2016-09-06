@@ -151,13 +151,13 @@ class Player extends Component {
 					<img src={stop} alt="stop" width={50}/>}
 			</div>);
 		const playNextButton = (
-			<div className={classNames('player-state-button','flex-row',
+			<div className={classNames('player-state-button', 'flex-row',
 				{'disabled-btn': this.state.loading})}
 			     onClick={this.handlePlayNext}>
 				<i className="fa fa-step-forward fa-3x" aria-hidden="true"></i>
 			</div>);
 		const playPreviousButton = (
-			<div className={classNames('player-state-button','flex-row',
+			<div className={classNames('player-state-button', 'flex-row',
 				{'disabled-btn': this.state.loading})}
 			     onClick={this.handlePlayPrevious}>
 				<i className="fa fa-step-backward fa-3x" aria-hidden="true"></i>
