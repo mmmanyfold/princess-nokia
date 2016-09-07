@@ -163,7 +163,7 @@ class Splash extends Component {
               </div>
             </div>
           </div>
-          <Music isMobile={this.state.isMobile}/>
+          <Music isMobile={true}/>
           <div id="lyrics">
             <img src={bart}/>
             <img src={tomboy}/>
