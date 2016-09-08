@@ -251,15 +251,9 @@ body {
 }
 
 .music-view {
-  a {
-    text-decoration: none;
-    &:hover {
-      color: black;
-    }
-    color: white;
-  }
   z-index: 100;
   width: 100%;
+  background-color: #1a1a1a;
   color: black;
   font-size: 0.9em;
   @media (max-width: 700px) {
@@ -278,6 +272,19 @@ body {
   }
   position: fixed;
   bottom: 0;
+}
+.Soundcloud {
+  font-size: 1.4em;
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: gray;
+    }
+  }
+  height: 54px;
+  justify-content: center;
+  -webkit-justify-content: center;
 }
 
 .Player {
