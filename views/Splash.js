@@ -151,7 +151,7 @@ class Splash extends Component {
                   <span>scroll for lyrics</span>
                 </div>
                 <div className="flex-row-item download">
-                  <a className="hvr-icon-down" onClick={this.handleDownloadClicks} href="http://d24jixpl499a69.cloudfront.net/PrincessNokia1992_.zip">
+                  <a className="hvr-icon-down" onClick={this.handleDownloadClicks} href="https://s3.amazonaws.com/princess-nokia-1992/PrincessNokia1992_.zip">
                     <span>Download 1992</span>
                   </a>
                 </div>
