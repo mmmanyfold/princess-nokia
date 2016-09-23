@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
@@ -14,6 +15,9 @@ module.exports = {
             index: 'index.html'
         }
     },
+    plugins: [
+      new InlineEnviromentVariablesPlugin()
+    ],
     module: {
         loaders: [
             {
