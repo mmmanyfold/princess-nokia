@@ -176,9 +176,9 @@ class Splash extends Component {
                 </div>
                 <div className="flex-row-item download">
                   <a className={classNames('hvr-icon-down', {'hidden': this.state.dlStart})} onClick={this.handleDropboxClick}>
-                    <span onClick={this.handleDownloadClicks}>Download 1992</span>
+                    <span>Download 1992</span>
                   </a>
-                  <span id="results"></span>
+                  <span id="results" onClick={this.handleDownloadClicks}></span>
                   <span id="dl-loader" className={classNames({'hidden': !this.state.dlLoading})}>Fetching Download...</span>
                 </div>
                 <div className="flex-row-item arrow">
