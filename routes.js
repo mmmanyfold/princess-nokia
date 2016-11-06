@@ -1,5 +1,7 @@
-import Splash from './views/Splash';
+import {Splash_1992} from './views/Splash_1992';
+import {Splash_brujas} from './views/Splash_brujas';
 import AppContainer from './AppContainer';
+import SplashAppContainer from './SplashAppContainer';
 import Main from './views/Main';
 import Music from './views/Music';
 import Tour from './views/Tour';
@@ -11,13 +13,9 @@ import { Router, Route, IndexRoute, browserHistory} from 'react-router';
 // * with duplicate routes for github pages
 const routes = (<Router history={browserHistory}>
     <Route path='/'>
-        <IndexRoute component={Splash}/>
-        <Route path="/site" component={AppContainer}>
-            <IndexRoute component={Main}/>
-            <Route path="/main" component={Main}/>
-            <Route path="/music" component={Music}/>
-            <Route path="/tour" component={Tour}/>
-        </Route>
+        <IndexRoute component={Splash_brujas}/>
+        <Route path="1992" component={Splash_1992}/>
+        <Route path="brujas" component={Splash_brujas}/>
     </Route>
 </Router>);
 

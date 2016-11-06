@@ -39,7 +39,7 @@ const Hovers = {
   Arrow: [arrow]
 };
 
-class Splash extends Component {
+export class Splash_1992 extends Component {
 
     constructor(props) {
         super(props);
@@ -111,7 +111,7 @@ class Splash extends Component {
 
     render() {
         return (
-        <div className="splash">
+        <div className="splash-1992">
           <div className="whiteout fadeOut">
           </div>
           <div className="logo-box fadeOut">
@@ -202,6 +202,4 @@ class Splash extends Component {
           </div>
         </div>);
     }
-}
-
-export default Splash
+};
