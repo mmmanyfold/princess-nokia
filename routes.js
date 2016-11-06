@@ -1,7 +1,6 @@
 import {Splash_1992} from './views/Splash_1992';
 import {Splash_brujas} from './views/Splash_brujas';
 import AppContainer from './AppContainer';
-import SplashAppContainer from './SplashAppContainer';
 import Main from './views/Main';
 import Music from './views/Music';
 import Tour from './views/Tour';

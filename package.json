@@ -20,7 +20,6 @@
     "babel-preset-stage-0": "^6.5.0",
     "bootstrap": "^3.3.6",
     "classnames": "^2.2.5",
-    "dropbox": "^2.2.1",
     "enquire.js": "^2.1.1",
     "history": "^3.0.0",
     "image-map-resizer": "^1.0.3",

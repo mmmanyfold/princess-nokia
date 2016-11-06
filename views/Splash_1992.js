@@ -3,7 +3,6 @@ import { Link } from 'react-router'; //react.LINK
 import Music from  './Music';
 import {Carousel} from 'react-bootstrap';
 import enquire from 'enquire.js';
-import Dropbox from 'dropbox';
 import classNames from 'classnames';
 
 const splash1 = require('../img/splash-1992/vertical/splash1.jpg');
@@ -45,12 +44,9 @@ export class Splash_1992 extends Component {
         super(props);
         this.state = {
           Arrow: Hovers.Arrow[0],
-	        isMobile: false,
-          dlLoading: false,
-          dlStart: false
+	        isMobile: false
         };
         this.handleHover = this.handleHover.bind(this);
-        this.handleDropboxClick = this.handleDropboxClick.bind(this);
     }
 
     componentWillMount() {
@@ -89,38 +85,11 @@ export class Splash_1992 extends Component {
       });
     }
 
-    handleDropboxClick(){
-      var dbx = new Dropbox({ accessToken: process.env.PRINCESS_NOKIA_DROPBOX_TOKEN });
-      this.setState({dlLoading: true, dlStart: true});
-      dbx.sharingGetSharedLinkFile({url: process.env.PRINCESS_NOKIA_DROPBOX_LINK })
-        .then((data)=> {
-          this.setState({dlLoading: false});
-          var downloadUrl = URL.createObjectURL(data.fileBlob);
-          var downloadButton = document.createElement('a');
-          downloadButton.setAttribute('href', downloadUrl);
-          downloadButton.setAttribute('download', data.name);
-          downloadButton.setAttribute('class', 'button');
-          downloadButton.innerText = 'Your Download is Ready';
-          $('#results').html(downloadButton);
-        })
-        .catch((error)=> {
-          this.setState({dlStart: false, dlLoading: false});
-          console.error(error);
-        });
-    }
-
     render() {
         return (
         <div className="splash-1992">
-          <div className="whiteout fadeOut">
-          </div>
-          <div className="logo-box fadeOut">
-            <div className="logo fadeInDownOut">
-              <img src={logo}/>
-            </div>
-          </div>
           <div className="flex-column main">
-            <div className="flex-col-item1 fadeIn">
+            <div className="flex-col-item1">
                 <Carousel id="booklet-carousel"
                   slide={true}
                   indicators={false}
@@ -168,18 +137,18 @@ export class Splash_1992 extends Component {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <div className="flex-col-item2 fadeIn">
+            <div className="flex-col-item2">
               <div className="flex-row links">
                 <div className="flex-row-item scrolldown">
                   <i className="fa fa-angle-double-down" aria-hidden="true"></i>
                   <span>scroll for lyrics</span>
                 </div>
                 <div className="flex-row-item download">
-                  <a className={classNames('hvr-icon-down', {'hidden': this.state.dlStart})} onClick={this.handleDropboxClick}>
-                    <span>Download 1992</span>
+                  <a className="hvr-icon-down"
+                     href="http://dl.dropboxusercontent.com/s/dpax8o7wnvte09j/PrincessNokia1992.zip?dl=0"
+                     onClick={this.handleDownloadClicks}>
+                    Download 1992
                   </a>
-                  <span id="results" onClick={this.handleDownloadClicks}></span>
-                  <span id="dl-loader" className={classNames({'hidden': !this.state.dlLoading})}>Fetching Download...</span>
                 </div>
                 <div className="flex-row-item arrow">
                   <a href="#" onClick={this.handleArrowClick}>
