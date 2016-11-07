@@ -20,8 +20,8 @@ export class Splash_brujas extends Component {
         player = new YT.Player('player', {
           height: '394',
           width: '700',
-          videoId: 's_ZmvWSPFkU',
-          playerVars: { 'controls': 1, 'showinfo': 0, 'rel': 0 },
+          videoId: 'iUcAPCxrSQs',
+          playerVars: { 'controls': 1, 'showinfo': 1, 'rel': 0 },
           events: { 'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange}
         });
