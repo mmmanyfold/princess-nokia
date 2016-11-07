@@ -64,7 +64,7 @@ export class Splash_brujas extends Component {
             <div id="player" className="tv__video"></div>
         </div>
         <div className="links">
-          <Link to="/1992">GO TO 1992</Link>
+          <Link to="/1992">1992</Link>
         </div>
       </div>
     )
