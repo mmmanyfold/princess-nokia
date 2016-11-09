@@ -76,9 +76,11 @@ export class Splash_1992 extends Component {
                 var downloadButton = document.createElement('a');
                 downloadButton.setAttribute('href', downloadUrl);
                 downloadButton.setAttribute('download', data.name);
-                downloadButton.setAttribute('class', 'button');
-                downloadButton.innerText = 'Your Download is Ready';
+                downloadButton.setAttribute('class', 'button js_click');
+                downloadButton.setAttribute('id', 'js_click');
+                downloadButton.innerText = 'Download Complete';
                 $('#results').html(downloadButton);
+                $('#js_click')[0].click();
             })
             .catch((error)=> {
                 this.setState({dlStart: false, dlLoading: false});
@@ -170,7 +172,11 @@ export class Splash_1992 extends Component {
                       <span>Download 1992</span>
                   </a>
                   <span id="results" onClick={this.handleDownloadClicks}></span>
+<<<<<<< HEAD
                   <span id="dl-loader" className={classNames({'hidden': !this.state.dlLoading})}>Fetching Download...</span>
+=======
+                  <span id="dl-loader" className={classNames({'hidden': !this.state.dlLoading})}>Download in progress...</span>
+>>>>>>> 96bcc55e9368ed768af496b9ecdbcaa5764108a0
               </div>
               <div className="flex-row-item arrow">
                   <a href="#" onClick={this.handleArrowClick}>
