@@ -4,6 +4,7 @@ import Music from  './Music';
 import {Carousel} from 'react-bootstrap';
 import enquire from 'enquire.js';
 import classNames from 'classnames';
+import Dropbox from 'dropbox';
 
 const splash1 = require('../img/splash-1992/vertical/splash1.jpg');
 const splash2 = require('../img/splash-1992/vertical/splash2.jpg');
@@ -47,6 +48,7 @@ export class Splash_1992 extends Component {
 	        isMobile: false
         };
         this.handleHover = this.handleHover.bind(this);
+        this.handleDropboxClick = this.handleDropboxClick.bind(this);
     }
 
     componentWillMount() {
@@ -62,6 +64,28 @@ export class Splash_1992 extends Component {
 		        });
 	        }
         });
+    }
+
+    handleDropboxClick(){
+        var dbx = new Dropbox({ accessToken: process.env.PRINCESS_NOKIA_DROPBOX_TOKEN });
+        this.setState({dlLoading: true, dlStart: true});
+        dbx.sharingGetSharedLinkFile({url: process.env.PRINCESS_NOKIA_DROPBOX_LINK })
+            .then((data)=> {
+                this.setState({dlLoading: false});
+                var downloadUrl = URL.createObjectURL(data.fileBlob);
+                var downloadButton = document.createElement('a');
+                downloadButton.setAttribute('href', downloadUrl);
+                downloadButton.setAttribute('download', data.name);
+                downloadButton.setAttribute('class', 'button js_click');
+                downloadButton.setAttribute('id', 'js_click');
+                downloadButton.innerText = 'Download Complete';
+                $('#results').html(downloadButton);
+                $('#js_click')[0].click();
+            })
+            .catch((error)=> {
+                this.setState({dlStart: false, dlLoading: false});
+                console.error(error);
+            });
     }
 
     handleHover(type, n) {
@@ -143,18 +167,18 @@ export class Splash_1992 extends Component {
                   <i className="fa fa-angle-double-down" aria-hidden="true"></i>
                   <span>scroll for lyrics</span>
                 </div>
-                <div className="flex-row-item download">
-                  <a className="hvr-icon-down"
-                     href="http://dl.dropboxusercontent.com/s/dpax8o7wnvte09j/PrincessNokia1992.zip?dl=0"
-                     onClick={this.handleDownloadClicks}>
-                    Download 1992
+              <div className="flex-row-item download">
+                  <a className={classNames('hvr-icon-down', {'hidden': this.state.dlStart})} onClick={this.handleDropboxClick}>
+                      <span>Download 1992</span>
                   </a>
-                </div>
-                <div className="flex-row-item arrow">
+                  <span id="results" onClick={this.handleDownloadClicks}></span>
+                  <span id="dl-loader" className={classNames({'hidden': !this.state.dlLoading})}>Download in progress...</span>
+              </div>
+              <div className="flex-row-item arrow">
                   <a href="#" onClick={this.handleArrowClick}>
-                    <img src={arrow}/>
+                      <img src={arrow}/>
                   </a>
-                </div>
+              </div>
               </div>
             </div>
           </div>
