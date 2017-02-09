@@ -97,6 +97,12 @@ export class Splash_1992 extends Component {
       $(".carousel").carousel('pause');
     }
 
+    handleJumpClick() {
+      $('html,body').animate({
+        scrollTop: $("#lyrics").offset().top},
+        'slow');
+    }
+
     handleArrowClick() {
       alert("Full site coming soon :)");
     }
@@ -165,11 +171,11 @@ export class Splash_1992 extends Component {
               <div className="flex-row links">
                 <div className="flex-row-item scrolldown">
                   <i className="fa fa-angle-double-down" aria-hidden="true"></i>
-                  <span>scroll for lyrics</span>
+                  <span onClick={this.handleJumpClick}>jump to lyrics</span>
                 </div>
               <div className="flex-row-item download">
                   <a className={classNames('hvr-icon-down', {'hidden': this.state.dlStart})} onClick={this.handleDropboxClick}>
-                      <span>Download 1992</span>
+                      <span id="dl-link">Download 1992</span>
                   </a>
                   <span id="results" onClick={this.handleDownloadClicks}></span>
                   <span id="dl-loader" className={classNames({'hidden': !this.state.dlLoading})}>Download in progress...</span>
@@ -182,7 +188,7 @@ export class Splash_1992 extends Component {
               </div>
             </div>
           </div>
-          <Music isMobile={true}/>
+          <iframe width="100%" height="350" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/256935689&amp;color=ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
           <div id="lyrics">
             <img src={bart}/>
             <img src={tomboy}/>

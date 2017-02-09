@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Archivo+Narrow';
+@import 'https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700';
 
 html, body {
   height: 100%;
@@ -135,6 +135,7 @@ body {
     @media (orientation: portrait) {
       height: 86%;
     }
+    margin-bottom: 1em;
   }
   .flex-row-item {
     width: 33.3%;
@@ -155,26 +156,35 @@ body {
   }
   .download {
     font-size: 1.8em;
-    padding-left: 35px;
+    margin-top: 0.4em;
     a {
-      color: #ae0e30;
+      color: brown;
       text-decoration: none;
     }
-    span {
-      padding-left: 1em;
-      &:hover {
-        font-weight: bold;
-      }
+  }
+  #dl-link {
+    padding-left: 1.3em;
+    cursor: pointer;
+    &:hover {
+      font-weight: bold;
     }
+  }
+  #dl-loader {
+    font-style: italic;
+    color: darkgreen;
   }
   .scrolldown {
     text-align: left;
     align-self: flex-end;
-    color: gray;
-    font-size: 1em;
+    color: midnightblue;
+    font-size: 1.1em;
     padding: 0.5em 1.5em;
     span {
       margin: 0 0.5em;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
     }
     @media (orientation: portrait) {
       text-align: center;
@@ -201,9 +211,8 @@ body {
       margin: 0 auto;
       display: block;
     }
-    border-top: 1px solid gray;
-    padding: 0 0 8em 0;
-    margin-top: 3em;
+    border-top: 2px solid gray;
+    padding: 2.5em 0;
     overflow-x: scroll;
   }
 }
@@ -313,7 +322,7 @@ body {
     margin: 0.5em;
     justify-content: flex-end;
     position: fixed;
-    bottom: 0.5em;
+    bottom: 0.3em;
     right: 0.5em;
     @media (orientation: portrait) {
       display: none;
@@ -332,8 +341,14 @@ body {
     }
   }
   height: 54px;
+  padding-left: 1em;
   justify-content: center;
   -webkit-justify-content: center;
+}
+
+.SocialMediaShareButton {
+  margin: 0 0.25em;
+  cursor: pointer;
 }
 
 .Player {
@@ -464,7 +479,7 @@ body {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  padding-right: 2.2em;
+  padding-right: 2.1em;
 }
 .hvr-icon-down:before {
   content: "\f01a";
